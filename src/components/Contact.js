@@ -5,13 +5,15 @@ export default function Contact() {
     <>
         <div className='contact-section'>
                 <div className='title'>
-                <h2>LET’S HAVE A CHAT</h2>
+                <h2>LET’S TALK</h2>
                 </div>
                 <div className='detail'>
                     <div className='info'>
+                        <div className='gr-info'>
                         <span>20studio@contact.com</span>
                         <span>+84 354 202 200</span>
                         <span>62/193 Ly Chinh Thang, P.8, Q.3, HCMC.</span>
+                        </div>
                     </div>
                     <form>
                         <div className='nor'>
@@ -22,8 +24,8 @@ export default function Contact() {
                             <input type="text" name="phone" defaultValue="" placeholder='Phone Number' />
                         </div>
                         <div  className='nor'>
-                            <select defaultValue="" placeholder='Chọn dịch vụ'>
-                                <option value="" disabled selected>Select services</option>
+                            <select defaultValue="" placeholder='Chọn dịch vụ' >
+                                <option value="" disabled>Select services</option>
                                 <option value="1">May</option>
                                 <option value="2">Vá</option>
                                 <option value="3">Rập</option>
