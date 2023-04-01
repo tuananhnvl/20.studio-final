@@ -17,6 +17,8 @@ import Services from "./pages/Services";
 import SampleDev from "./pages/SampleDev"
 import PatternMaking from "./pages/PatternMaking"
 import LoadingPage from "./components/LoadingPage"
+import Products from './pages/Products';
+import PageNotFound from './pages/PageNotFound'
 const Test = lazy(() => import("./components/Test"));
 function App() {
   // useLocoScroll(true)
@@ -71,6 +73,28 @@ function App() {
             </section>
           </>
         }/>
+   
+        <Route path="/products" element={
+          <>
+            <div id='transition-section'><h2></h2></div>
+            <section className='container'>
+              <Navbar />
+              <Products />
+              <Grid />
+            </section>
+          </>
+        }/>
+
+        <Route path="/pagenotfound" element={
+         <>
+         <div id='transition-section'><h2></h2></div>
+``           <section className='container'>
+           <Navbar />
+           <PageNotFound/>
+           <Grid />
+         </section>
+       </>
+       } />
         <Route path="/sampledev" element={
           <>
             <div id='transition-section'><h2></h2></div>
