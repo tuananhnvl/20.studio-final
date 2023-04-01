@@ -48,13 +48,22 @@ useLocoScroll(true)
             </div>
             <div className='products_banner' data-scroll-container>
                 <a><img src={images.image1} alt='' /></a>
-                <h2>PRODUCTS</h2>
+                <h2>SẢN XUẤT</h2>
             </div>
            
             <div className='products_banner-sub' data-scroll-container>
-                <a className='sub'>Từ nguyên liệu đến thành phẩm. Chúng tôi có thể cung cấp dịch vụ sản xuất thời trang</a>
+                <a className='sub'>Từ nguyên liệu đến thành phẩm. Chúng tôi có thể cung cấp dịch vụ sản xuất thời trang.</a>
                 <a className='sub-next'>
                     <a>Quy trình làm việc</a>
+                    <svg  data-name="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 143.25 244.55">
+
+<g id="arrow-svg" data-name="Layer-Main">
+    <ellipse className="cls-2" cx="71.62" cy="67.12" rx="71.5" ry="67"/>
+    <rect className="cls-1" x="70.28" y="94.21" width=".5" height="150"/>
+    <rect className="cls-1" x="59.75" y="218.43" width=".5" height="30" transform="translate(-147.49 110.79) rotate(-45)"/>
+    <rect className="cls-1" x="80.81" y="218.76" width=".5" height="30" transform="translate(189.04 11.15) rotate(45)"/>
+</g>
+</svg> 
                 </a>
             </div>
             {/* list step ( 5 step ) */}
@@ -65,10 +74,10 @@ useLocoScroll(true)
                     </div>
                     <div className='text'>
                         <div className="title">
-                            Develop First Prototype
+                        Phát triên nguyên mẫu đầu tiên
                         </div>
                         <div className="des">
-                            With years of experience working in the industry, 20Studio able to turn the most sophisticate design into a real sample garment
+                        Với nhiều năm kinh nghiệm làm việc trong ngành, 20Studio có thể biến những thiết kế tinh xảo nhất thành sản phẩm may mẫu thực tế
                         </div>
                     </div>
                 </div>
@@ -79,10 +88,10 @@ useLocoScroll(true)
                     </div>
                     <div className='text'>
                         <div className="title">
-                        Adjusting and Grading
+                        Điều Chỉnh và Nhảy Rập
                         </div>
                         <div className="des">
-                        Making sure the garment perfectly fit on the body, and wearable to targeted people,. The design will be sizing with the help of experienced draping worker and advance fashion software 
+                        Đảm bảo trang phục hoàn toàn vừa vặn với cơ thể và có thể mặc được đối với những đối tượng mục tiêu. Thiết kế sẽ được định cỡ với sự trợ giúp của nhân viên xếp nếp có kinh nghiệm và phần mềm thời trang tiên tiến
                         </div>
                     </div>
                 </div>
@@ -93,10 +102,10 @@ useLocoScroll(true)
                     </div>
                     <div className='text'>
                         <div className="title">
-                        Production Planing
+                        Lập Kế Hoạch Sản Xuất
                         </div>
                         <div className="des">
-                        Pre-schedule and update the production plan in real time. Our customer always being inform by us
+                        Lên lịch trước và cập nhật kế hoạch sản xuất theo thời gian thực. Khách hàng của chúng tôi luôn được chúng tôi thông báo
                         </div>
                     </div>
                 </div>
@@ -107,7 +116,8 @@ useLocoScroll(true)
                     </div>
                     <div className='text'>
                         <div className="title">
-                        Quality Control
+                        Kiểm Soát Chất Lượng
+
                         </div>
                         <div className="des">
                         We only delivery an impeccable quality product that fully reflect the prestige and quality of our customer
@@ -121,10 +131,11 @@ useLocoScroll(true)
                     </div>
                     <div className='text'>
                         <div className="title">
-                        Shipping
+                        Vận Chuyển
                         </div>
                         <div className="des">
-                        Only when qualified products reach to the customer hand, we always keep track closely
+                        Chỉ khi sản phẩm đạt chất lượng mới đến tay khách hàng, chúng tôi luôn theo dõi sát sao
+
                         </div>
                     </div>
                 </div> 

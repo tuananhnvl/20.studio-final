@@ -111,7 +111,7 @@
     max-width: 50vw;
     font-family: NVNValky;
     font-size: 42px;
-    font-weight: 400;
+    
     line-height: 142%;
     letter-spacing: 0.03em;
     text-align: center;
@@ -127,7 +127,7 @@
     max-width: fit-content;
     font-family: NVNValky;
     font-size: 42px;
-    font-weight: 400;
+    
     line-height: 142%;
     letter-spacing: 0.03em;
     text-align: center;
@@ -158,7 +158,7 @@
 .step2-dev_products ,
 .step3-dev_products ,
 .step4-dev_products {
-    margin: 30vh auto;
+    margin: 40vh auto;
     position:relative;
 }
 .step1-dev_products .img,
@@ -183,9 +183,8 @@
 .step3-dev_products .title,
 .step4-dev_products .title{
     font-family: NVNValky;
-    font-size: 105px;
-    font-weight: 400;
-    line-height: 130%;
+    font-size: 95px;
+    line-height: 120%;
     letter-spacing: 0.01em;
     text-transform: uppercase;
 }
@@ -195,8 +194,8 @@
 .step4-dev_products .des {
     padding: 32px 32px 0 64px;
     font-family: PoiretOne;
-    font-size: 32px;
-    font-weight: 400;
+    font-size: 26px;
+    
     line-height: 170%;
     letter-spacing: 0.01em;
   
@@ -206,7 +205,7 @@
 /* step 1 */
 .step1-dev_products .img {
     grid-column-start: 1;
-    grid-column-end:5;
+    grid-column-end:4;
     height: fit-content;
 }
 .step1-dev_products .text {
@@ -216,7 +215,7 @@
     transform: translateY(-50%);
 }
 .step1-dev_products .img img {
-    width: 90%;
+    width: 100%;
     height: auto;
     display: block;
 }
@@ -227,7 +226,7 @@
 .step1-dev_products .img-behind {
     position: absolute;
     bottom: -200px;
-    right: -266px;
+    right: -110px;
 
     width: 400px;
   
@@ -250,12 +249,13 @@
 .step2-dev_products .img {
     grid-column-start: 2;
     grid-column-end: 6;
-    height: fit-content;
+    grid-row:1;
+    height: 700px;
 }
 .step2-dev_products .text {
     position: absolute;
     height: fit-content;
-    top:77%;
+    top:520px;
     left:0;
     transform:translateY(-50%);
 }
@@ -269,17 +269,58 @@
 .step2-dev_products .title,.step2-dev_products .des {
     text-align: left;
 }
+.step2-dev_products .detail {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row:2;
+}
+.step2-dev_products .detail ul {
+    list-style:none;
+    margin:10vh 0;
+    padding:0;
+}
+.step2-dev_products .detail ul li {
+    width:100%;
+    height:fit-content;
+}
+.step2-dev_products .detail ul li a {
+  
+    font-family: PoiretOne;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    position:relative;
+    display:block;
+    width:100%;
+    height:100%;
+    padding: 16px 0 16px 0;
+    
+}
+.step2-dev_products .detail ul li a:after {
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:1px;
+    width:100%;
+    background:rgb(225,225,225,.9);
+}
 /*  step 3 */
 
 .step3-dev_products .img {
     grid-column-start: 2;
     grid-column-end: 6;
-    height: fit-content;
+    height: 700px;
+
+    grid-row: 1;
+    
 }
 .step3-dev_products .text {
     position: absolute;
     height: fit-content;
-    top:105%;
+    top:550px;
     left:0;
     transform:translateY(-50%);
 }
@@ -296,12 +337,12 @@
 
 
 .step3-dev_products .img-behind {
-    position: absolute;
-    bottom: -200px;
-    right: -266px;
-
-    width: 400px;
-  
+    position: relative;
+    grid-row: 1;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    transform: translate(-25%,30%);
+    z-index:10;
     height: fit-content;
 }
 .step3-dev_products .img-behind:before {
@@ -323,18 +364,18 @@
 .step4-dev_products .img {
     grid-column-start: 2;
     grid-column-end: 6;
-    height: fit-content;
+    height: 800px;
 }
 .step4-dev_products .text {
     position: absolute;
     
     height: fit-content;
-    bottom: -37%;
-    right: 3%;
+    top: 635px;
+    right: 100px;
 }
 
 .step4-dev_products .img img {
-    width: 90%;
+    width: calc(100% - calc(1440px / 5) / 2);
     float:right;
     height: auto;
     display: block;
@@ -342,4 +383,27 @@
 
 .step4-dev_products .title,.step4-dev_products .des {
     text-align: left;
+}
+.step4-dev_products .img-behind {
+    position: absolute;
+    width:420px;
+    height:700px;
+    overflow: hidden;
+
+    top:350px;
+    left:-220px;
+}
+.step4-dev_products .img-behind:before {
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    background: rgb(0,0,0,.69);
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+.step4-dev_products .img-behind img {
+    width:auto;
+    height:100%;
 }

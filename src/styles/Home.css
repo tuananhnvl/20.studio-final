@@ -1,5 +1,5 @@
 :root {
-    --primary-color:#1E1E1E;
+    --primary-color:#0C0C0C;
     --w-grid: calc(100vw - 128px);
     --w-item-grid : calc(var(--w-grid) / 5);
     --random-column: 0;
@@ -101,6 +101,7 @@ a {
     left:0;
     width: 100vw;
     height: 100vh;
+    pointer-events: none;
 }
 .grid-container {
     opacity:1;
@@ -142,11 +143,12 @@ div.grid-container > div:nth-child(n) {
     position:relative;
 }
 div.grid-container > div:nth-child(1) {
-    border-left:1px solid white;
+    border-left:1px solid rgb(225,225,225,.1);
 }
 div.grid-container > div:nth-child(5) {
-    border-right:1px solid white;
+    border-right:1px solid rgb(225,225,225,.1);
 }
+
 div.grid-container > div:nth-child(1):after,
 div.grid-container > div:nth-child(2):after,
 div.grid-container > div:nth-child(3):after,
@@ -155,7 +157,7 @@ div.grid-container > div:nth-child(4):after {
     position:absolute;
     width:1px;
     height:100vh;
-    background: rgb(225,225,225,1);
+    background: rgb(225,225,225,.1);
     right:0;
     z-index:1;
 }
@@ -847,16 +849,22 @@ text-align:center;
 
   
 /* 404 Page*/
+@media (max-width:868px) {
+    .page404 .title-large {
+        flex-wrap: wrap;
+    }
+}
 .page404 {
     width: 100vw;
     height: 100vh;
-    position:relative;
+    margin:0;
+    padding:0;
     overflow: hidden;
     display: flex;
 }
 .page404 .title-large {
     height: fit-content;
-margin: auto;
+    margin: auto;
     padding: 0;
     font-family: NVNValky;
     font-size: 200px;
@@ -864,7 +872,31 @@ margin: auto;
     line-height: 100%;
     letter-spacing: 0.01em;
 
+    display: flex;
+}
+.page404 .title-large .txt-error,
+.page404 .title-large .txt-404 {
+    position:relative;
+    display:flex;
+    width: fit-content;
+    height: fit-content;
+    
+}
+.page404 .title-large .txt-error {
+    left: -800px;
+    
+}
+
+.page404 .title-large .txt-404 {
+    left: 500px;
+  
+}
+.page404 .title-large .txt-error span,
+.page404 .title-large .txt-404 span {
     display: block;
+    width: fit-content;
+    height: fit-content;
+    opacity: 0;
 }
 .page404 .btn-home {
     font-family: PoiretOne;

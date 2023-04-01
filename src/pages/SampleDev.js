@@ -53,7 +53,7 @@ export default function SampleDev() {
             <div className='paranoid-section'>
                
 
-                <div className='dev_product--banner'data-scroll-container>
+                <div className='dev_product--banner' data-scroll-container>
                 <a value='/' onClick={redirectPage} >GO TO HOME PAGE</a>
                 <a value='/patternmaking' onClick={redirectPage} >patternmaking</a>
                     <div className='text'>
@@ -98,7 +98,7 @@ export default function SampleDev() {
                     </div>
                     <div className='text'>
                         <div className="title">
-                        Nghiên cứu và phát triển
+                        Nghiên&nbsp;cứu và phát&nbsp;triển
                         </div>
                         <div className="des">
                         Đội ngũ của 20Studio nghiên cứu về vải và phụ kiện, phát triển các quy trình, thêu, in ấn, hoàn thiện và phương pháp giặt độc đáo bằng cả tay nghề và máy móc hiện đại, để tạo ra sản phẩm độc đáo và chất lượng
@@ -115,17 +115,30 @@ export default function SampleDev() {
                     </div>
                     <div className='text'>
                         <div className="title">
-                        Kỹ thuật tinh xảo
+                        Kỹ&nbsp;thuật tinh&nbsp;xảo
                         </div>
                         <div className="des">
                         Chúng tôi tại 20studio sẵn sàng tạo ra các quy trình độc đáo giúp khách hàng thúc đẩy sự sáng tạo và khám phá những điều mới lạ.
                         </div>
                     </div>
+                    <div className='detail'>
+                        <ul>
+                            <li><a>Double-face</a></li>
+                            <li><a>Digital print</a></li>
+                            <li><a>Washing and dyeing</a></li>
+                            <li><a>Transfer print</a></li>
+                            <li><a>Laser cuts</a></li>
+                            <li><a>Machine embroidery</a></li>
+                            <li><a>Thermo-adhesive applications</a></li>
+                            <li><a>Embossing / Debossing</a></li>
+                            <li><a>Heat sealing</a></li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div className='step3-dev_products consuctor--gridsys'>
+                <div className='step3-dev_products consuctor--gridsys' data-scroll-container>
                     <div className='img'>
-                        <img src={images.image3} alt="" />
+                        <img src={images.image5} alt="" />
                     </div>
                     <div className='text'>
                         <div className="title">
@@ -134,6 +147,9 @@ export default function SampleDev() {
                         <div className="des">
                         Chuyên viên thiết kế mẫu của chúng tôi sẽ tạo ra các mẫu đẹp cho các loại sản phẩm chính như: áo khoác, váy, áo sơ mi, váy chân váy, quần
                         </div>
+                    </div>
+                    <div className='img-behind'>
+                        <img src={images.image6} alt='' />
                     </div>
                 </div>
 
@@ -150,6 +166,11 @@ export default function SampleDev() {
 
                         </div>
                     </div>
+
+                    <div className='img-behind'>
+                        <img src={images.image6} alt='' />
+                    </div>
+                    
                 </div>
 
                 
