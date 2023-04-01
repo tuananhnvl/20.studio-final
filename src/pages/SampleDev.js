@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import Contact from '../components/Contact'
 import { useNavigate } from 'react-router-dom';
 import usePageTransition from '../hooks/usePageTransition.js'
+import {CSSRulePlugin} from "gsap/CSSRulePlugin";
 const images = {
     image1: require('.././asset/sampledev/1.png'),
     image3: require('.././asset/sampledev/2.png'),
@@ -15,21 +16,27 @@ const images = {
     image6: require('.././asset/sampledev/6.png'),
     image7: require('.././asset/sampledev/7.png'),
 };
-
+gsap.registerPlugin(CSSRulePlugin);
 export default function SampleDev() {
     useLocoScroll(true)
     const { redirectPage } = usePageTransition();
 
 
     //set prop
-    const listitemBanner = document.querySelectorAll('.dev_product--banner .gr-img a')
+   
     const propitemBanner = [
         [20,30],[50,80],[70,45],[80,0]
     ]
     useEffect(() => {
-        gsap.timeline({}).to(listitemBanner[1],{
-            xPercents: `${propitemBanner[1][0]}%`,
-            yPercents: `${propitemBanner[1][1]}%`,
+        const listitemBanner = document.querySelectorAll('.dev_product--banner .gr-img a')
+        const  redRule = CSSRulePlugin.getRule(".dev_product--banner .gr-img a:nth-child(1)");
+        gsap.timeline({}).to(redRule,{
+            cssRule: {
+              
+                top: `${propitemBanner[0][0]}%`,
+                left: `${propitemBanner[0][1]}%`
+              },
+              delay:2,
             duration:1
         })
        /*  for(let q=0;q<listitemBanner.length;q++) {
@@ -37,22 +44,23 @@ export default function SampleDev() {
             listitemBanner[q].style.top = `${propitemBanner[q][0]}%`
             listitemBanner[q].style.left = `${propitemBanner[q][1]}%`
         } */
-    },[listitemBanner])
+    },[])
     
     return (
 
         <section data-scroll-section>
 
             <div className='paranoid-section'>
-                <a value='/' onClick={redirectPage} >GO TO HOME PAGE</a>
-                <a value='/patternmaking' onClick={redirectPage} >patternmaking</a>
+               
 
                 <div className='dev_product--banner'data-scroll-container>
+                <a value='/' onClick={redirectPage} >GO TO HOME PAGE</a>
+                <a value='/patternmaking' onClick={redirectPage} >patternmaking</a>
                     <div className='text'>
                         <span>PHÁT TRIỂN</span>
                         <span>THIẾT KẾ</span>
                     </div>
-                   {/*  <div className='gr-img'>
+                    <div className='gr-img'>
                         <a>
                             <img src={images.image2} alt='' />
                         </a>
@@ -65,7 +73,7 @@ export default function SampleDev() {
                         <a>
                             <img src={images.image5} alt='' />
                         </a>
-                    </div> */}
+                    </div>
                 </div>
                 <div className='dev_product--bannersub' data-scroll-container>
                     <a className='sub'>Chúng tôi giúp khách hàng biến ý tưởng của họ thành sản phẩm hoàn thiện</a>

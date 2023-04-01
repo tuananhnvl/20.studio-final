@@ -32,10 +32,15 @@ export default function Contact() {
                             </select>
                         </div>
                         <div className='nor'>
-                            <textarea rows="10" defaultValue="Notes"></textarea>
+                            <textarea  defaultValue="Notes"></textarea>
                         </div>
                         <div  className='nor button-send'>
-                            <button type='submit'>Send</button>
+                            <a class="loop-holder">
+                            <div class="loop-holder__text">Send - Send - Send - Send - </div>
+                            <div class="loop-holder__text">Send - Send - Send - Send - </div>
+                               
+                            </a>
+
                         </div>
                      
                     </form>

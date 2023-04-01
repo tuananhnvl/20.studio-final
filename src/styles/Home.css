@@ -566,7 +566,9 @@ text-align:center;
  /* contact section */
  .contact-section {
  
-    height:100vh;
+    height:fit-content;
+    padding-bottom: 3vh;
+
  }
  .contact-section * {
     color:white !important;
@@ -586,6 +588,7 @@ text-align:center;
     letter-spacing: 0.01em;
     text-align: left;
     height: fit-content;
+    margin: 0;
  }
  .contact-section .detail {
 
@@ -610,12 +613,12 @@ text-align:center;
     padding: 0 0 64px 64px;
  }
  .contact-section .detail .info span {
-    display:block;
+    display: block;
     margin: 1rem 0;
     font-family: PoiretOne;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 400;
-    line-height: 42px;
+    line-height: 100%;
     letter-spacing: 0.01em;
     text-align: left;
 
@@ -640,20 +643,20 @@ text-align:center;
  .contact-section .detail form > div:nth-child(1),
  .contact-section .detail form > div:nth-child(2),
  .contact-section .detail form > div:nth-child(3) {
-    max-height: 10%;
+    height: 10vh;
     border-bottom: 1px solid white;
     
  }
  
  .contact-section .detail form > div:nth-child(5) {
-    max-height: 12%;
+    height: 10vh;
    
  }
- .contact-section .detail form > div:nth-child(5) button {
+ .contact-section .detail form > div:nth-child(5) a {
     border:none !important;
  }
  .contact-section .detail form > div:nth-child(4) {
-    max-height:55%;
+    height: 40vh;
     border-bottom: 1px solid white;
     
 
@@ -677,7 +680,7 @@ text-align:center;
 
  .contact-section .detail form > div.nor input[type="text"],
  .contact-section .detail form > div.spec input[type="text"],
- .contact-section .detail form > div.nor button,
+ .contact-section .detail form > div.nor a,
 .contact-section .detail form > div.nor select,
 .contact-section .detail form > div.nor textarea{
     font-family: PoiretOne;
@@ -701,8 +704,37 @@ text-align:center;
     box-sizing: border-box;
  }
 
-
-
+ .contact-section .detail form .button-send a{
+    display: block;
+    display: flex;
+    
+ }
+ .loop-holder {
+    display: flex;
+    white-space: nowrap;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .loop-holder__text {
+    display: flex;
+    align-items: center;
+      animation: textLoop 10s linear infinite;
+      font-size: 70px;
+      padding-right: .35em;
+  }
+  
+  
+  @keyframes textLoop {
+      0% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0)
+      }
+      100% {
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0)
+      }
+  }
  .line {
     width: 100%;
     height: 8px;
