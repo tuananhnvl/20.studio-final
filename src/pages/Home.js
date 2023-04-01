@@ -7,9 +7,9 @@ import Services from '../components/Services';
 import ServicesinPage from '../components/ServicesinPage';
 import GalleryinPage from '../components/GalleryinPage';
 import Contact from '../components/Contact';
-import gsap from 'gsap';
+import gsap from 'gsap'; //hiệu ứng
 import vid1 from '../asset/videos/websites.mp4'
-import useLocoScroll from '.././hooks/useLocoScroll';
+import useLocoScroll from '.././hooks/useLocoScroll'; //lấy smooth
 import usePageTransition from '.././hooks/usePageTransition';
 import IntroVid from '../components/IntroVid';
 import '.././styles/HomeNew.css'
