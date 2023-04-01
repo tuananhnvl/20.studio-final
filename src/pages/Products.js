@@ -16,7 +16,7 @@ const images = {
 
 gsap.registerPlugin(CSSRulePlugin);
 export default function Products() {
-    useLocoScroll(true)
+useLocoScroll(true)
 
    
     useEffect(() => {
@@ -59,7 +59,7 @@ export default function Products() {
             </div>
             {/* list step ( 5 step ) */}
             <div className='wrapper-step-product' data-scroll-container>
-                <div className='step1-products'>
+                <div className='step1-products consuctor--gridsys'>
                     <div className='img'>
                         <img src={images.image3} alt="" />
                     </div>
@@ -73,7 +73,7 @@ export default function Products() {
                     </div>
                 </div>
 
-                <div className='step2-products'>
+                <div className='step2-products consuctor--gridsys'>
                     <div className='img'>
                         <img src={images.image2} alt="" />
                     </div>
@@ -87,7 +87,7 @@ export default function Products() {
                     </div>
                 </div>
 
-                <div className='step3-products'>
+                <div className='step3-products consuctor--gridsys'>
                     <div className='img'>
                         <img src={images.image4} alt="" />
                     </div>
@@ -101,8 +101,7 @@ export default function Products() {
                     </div>
                 </div>
 
-
-                <div className='step4-products'>
+                <div className='step4-products consuctor--gridsys'>
                     <div className='img'>
                         <img src={images.image5} alt="" />
                     </div>
@@ -116,8 +115,7 @@ export default function Products() {
                     </div>
                 </div>
 
-
-                <div className='step5-products'>
+                <div className='step5-products  consuctor--gridsys'>
                     <div className='img'>
                         <img src={images.image6} alt="" />
                     </div>
@@ -129,7 +127,7 @@ export default function Products() {
                         Only when qualified products reach to the customer hand, we always keep track closely
                         </div>
                     </div>
-                </div>
+                </div> 
                 
 
             </div>

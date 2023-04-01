@@ -95,18 +95,22 @@ section * {
 a {
     text-decoration:none;
 }
-.grid-container {
-    opacity:.3;
+.display-grid-helper {
     position:fixed;
-    display: grid;
-    width:var(--w-grid);
-    grid-template-columns: auto auto auto auto auto;
-    height:100%;
-    top:0;
+     top:0;
     left:0;
-   
-    left:50%;
-    transform:translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+}
+.grid-container {
+    opacity:1;
+    position:relative;
+    display: grid;
+    max-width:var(--maxW1440);
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    height:100%;
+   margin: 0 auto;
+
     z-index:0;
     pointer-events: none !important;
 }
@@ -114,16 +118,19 @@ a {
 /* newgird */
 .consuctor--gridsys {
     display:grid;
-    width:var(--w-grid);
+    max-width:var(--maxW1440);
     grid-template-columns: 20% 20% 20% 20% 20%;
     margin: 0 auto;
     position:relative;
-
-   
 }
-.consuctor--gridsys .item--gridsys {
 
+@media (max-width : 868px) {
+    .consuctor--gridsys,.grid-container {
+        max-width:calc(100% - 32px) !important;
+        grid-template-columns: 33.333% 33.333% 33.333% !important;
+    }
 }
+
 /* end  */
 .grid-item {
     
@@ -134,6 +141,12 @@ a {
 div.grid-container > div:nth-child(n) {
     position:relative;
 }
+div.grid-container > div:nth-child(1) {
+    border-left:1px solid white;
+}
+div.grid-container > div:nth-child(5) {
+    border-right:1px solid white;
+}
 div.grid-container > div:nth-child(1):after,
 div.grid-container > div:nth-child(2):after,
 div.grid-container > div:nth-child(3):after,
@@ -142,7 +155,7 @@ div.grid-container > div:nth-child(4):after {
     position:absolute;
     width:1px;
     height:100vh;
-    background: rgb(225,225,225,.1);
+    background: rgb(225,225,225,1);
     right:0;
     z-index:1;
 }

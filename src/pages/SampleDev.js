@@ -92,85 +92,67 @@ export default function SampleDev() {
                 </div>
                 {/* 4 step */}
                 <div className="wapper-step-dev_product">
-                    <div className="step1-dev_product consuctor--gridsys" data-scroll-container>
-                        <div className='text item--gridsys'>
-                            <div className="title">
-                            Nghiên cứu và phát triển
-                            </div>
-                            <div className="des">
-                            Đội ngũ của 20Studio nghiên cứu về vải và phụ kiện, phát triển các quy trình, thêu, in ấn, hoàn thiện và phương pháp giặt độc đáo bằng cả tay nghề và máy móc hiện đại, để tạo ra sản phẩm độc đáo và chất lượng
-                            </div>
+                <div className='step1-dev_products consuctor--gridsys'>
+                    <div className='img'>
+                        <img src={images.image1} alt="" />
+                    </div>
+                    <div className='text'>
+                        <div className="title">
+                        Nghiên cứu và phát triển
                         </div>
-                        <div className='img'>
-                            <img src={images.image1} alt="" />
-                        </div>
-                        <div className='img-randombg'>
-                            <img src={images.image3} alt="" />
+                        <div className="des">
+                        Đội ngũ của 20Studio nghiên cứu về vải và phụ kiện, phát triển các quy trình, thêu, in ấn, hoàn thiện và phương pháp giặt độc đáo bằng cả tay nghề và máy móc hiện đại, để tạo ra sản phẩm độc đáo và chất lượng
                         </div>
                     </div>
-                    
-
-                    <div className="step2-dev_product consuctor--gridsys" data-scroll-container>
-                        <div className='text item--gridsys'>
-                            <div className="title">
-                            Kỹ thuật tinh xảo
-                            </div>
-                            <div className="des">
-                            Chúng tôi tại 20studio sẵn sàng tạo ra các quy trình độc đáo giúp khách hàng thúc đẩy sự sáng tạo và khám phá những điều mới lạ.
-                            </div>
-                        </div>
-                        <div className='img'>
-                            <img src={images.image4} alt="" />
-                        </div>
-                        <ul className='list-detail'>
-                            <li><a>Heat sealing</a></li>
-                            <li><a>Laser cuts</a></li>
-                            <li><a>Machine embroidery</a></li>
-                            <li><a>Thermo-adhesive applications</a></li>
-                            <li><a>Transfer print</a></li>
-                            <li><a>Washing and dyeing</a></li>
-                            <li><a>Digital print</a></li>
-                            <li><a>Double-face</a></li>
-                            <li><a>Embossing / Debossing</a></li>
-                        </ul>
+                    <div className='img-behind'>
+                        <img src={images.image3} alt='' />
                     </div>
+                </div>
 
-
-                    <div className="step3-dev_product consuctor--gridsys" data-scroll-container>
-                        <div className='text item--gridsys'>
-                            <div className="title">
-                            Xây dựng rập
-                            </div>
-                            <div className="des">
-                            Chuyên viên thiết kế mẫu của chúng tôi sẽ tạo ra các mẫu đẹp cho các loại sản phẩm chính như: áo khoác, váy, áo sơ mi, váy chân váy, quần
-                            </div>
+                <div className='step2-dev_products consuctor--gridsys'>
+                    <div className='img'>
+                        <img src={images.image4} alt="" />
+                    </div>
+                    <div className='text'>
+                        <div className="title">
+                        Kỹ thuật tinh xảo
                         </div>
-                        <div className='img'>
-                            <img src={images.image5} alt="" />
-                        </div>
-                        <div className='img2'>
-                            <img src={images.image6} alt="" />
+                        <div className="des">
+                        Chúng tôi tại 20studio sẵn sàng tạo ra các quy trình độc đáo giúp khách hàng thúc đẩy sự sáng tạo và khám phá những điều mới lạ.
                         </div>
                     </div>
+                </div>
 
+                <div className='step3-dev_products consuctor--gridsys'>
+                    <div className='img'>
+                        <img src={images.image3} alt="" />
+                    </div>
+                    <div className='text'>
+                        <div className="title">
+                        dựng rập
+                        </div>
+                        <div className="des">
+                        Chuyên viên thiết kế mẫu của chúng tôi sẽ tạo ra các mẫu đẹp cho các loại sản phẩm chính như: áo khoác, váy, áo sơ mi, váy chân váy, quần
+                        </div>
+                    </div>
+                </div>
 
-                    <div className="step4-dev_product consuctor--gridsys" data-scroll-container>
-                        <div className='text item--gridsys'>
-                            <div className="title">
-                            May đo chi tiết
-                            </div>
-                            <div className="des">
+                <div className='step4-dev_products consuctor--gridsys'>
+                    <div className='img'>
+                        <img src={images.image3} alt="" />
+                    </div>
+                    <div className='text'>
+                        <div className="title">
+                        May đo chi tiết
+                        </div>
+                        <div className="des">
                         Sau giai đoạn mô hình và cắt, các thợ may của chúng tôi sẽ tạo ra mẫu nguyên mẫu đầu tiên, được điều chỉnh và hoàn thiện trước khi được khách hàng chấp nhận.
 
-                            </div>
-                        </div>
-                        <div className='img'>
-                            <img src={images.image3} alt="" />
-                        </div>
-                        <div className='img2'>
-                            <img src={images.image6} alt="" />
                         </div>
                     </div>
+                </div>
+
+                
                 </div>
 
 
