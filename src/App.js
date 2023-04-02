@@ -2,6 +2,7 @@
 import { useState, useEffect, lazy, Suspense, useRef } from 'react'
 import './styles/App.css';
 import './libs/locomotive-scroll.css';
+import './styles/Responve-Pagews.css'
 import Navbar from './components/Navbar';
 import Grid from './components/Grid'
 import './fonts/Marcellus-Regular.ttf';
@@ -37,11 +38,10 @@ function App() {
         <Route path="/" element={
           <>
             <div id='transition-section'><h2></h2></div>
-            <section className='container'>
-              <Navbar />
-              <Home />
-              <Grid />
-            </section>
+            <div className='container'>
+            <Home />
+            </div>
+         
           </>
         } />
 
@@ -65,8 +65,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/patternmaking" element={
           <>
-            <div id='transition-section'><h2></h2></div>
+           
             <section className='container'>
+              <div id='transition-section'><h2></h2></div>
               <Navbar />
               <PatternMaking />
               <Grid />
@@ -77,18 +78,15 @@ function App() {
         <Route path="/products" element={
           <>
             <div id='transition-section'><h2></h2></div>
-            <section className='container'>
-              <Navbar />
-              <Products />
-              <Grid />
-            </section>
+            <Products />
+           
           </>
         }/>
 
         <Route path="/pagenotfound" element={
          <>
          <div id='transition-section'><h2></h2></div>
-``           <section className='container'>
+           <section className='container'>
            <Navbar />
            <PageNotFound/>
            <Grid />
@@ -98,11 +96,13 @@ function App() {
         <Route path="/sampledev" element={
           <>
             <div id='transition-section'><h2></h2></div>
-  ``            <section className='container'>
-              <Navbar />
-              <SampleDev />
-              <Grid />
-            </section>
+            <div className='container'>
+                     
+            <SampleDev />
+
+            </div>
+   
+         
           </>
         } />
       </Routes>

@@ -44,8 +44,8 @@
     opacity: 0;
 }
 .wrapper-slider-partners .item img {
-    position:reltive;
-    width:100%;
+
+    width:auto;
     height:100%;
     display:block;
     margin: auto;

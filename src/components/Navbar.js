@@ -227,19 +227,19 @@ export default function Navbar() {
           <div className="list-item">
             <div ref={navItem} className="item-menu">
               <Link to="/gallery" onClick={closeNav}>
-                <p>Works</p>
+                <p>Dự án</p>
               </Link>
               <Link to="/sampledev" onClick={closeNav}>
-                <p>Sample Dev</p>
+                <p>Phát triển thiết kế</p>
               </Link>
-              <Link to="/patternmaking" onClick={closeNav}>
-                <p>Pattern Making</p>
+              <Link to="/products" onClick={closeNav}>
+                <p>Sản xuất</p>
               </Link>
               <Link to="/gallery" onClick={closeNav}>
-                <p>Story</p>
+                <p>Gallery</p>
               </Link>
               <Link to="/contact" onClick={closeNav}>
-                <p>Contact</p>
+                <p>Liên hệ</p>
               </Link>
  
             </div>

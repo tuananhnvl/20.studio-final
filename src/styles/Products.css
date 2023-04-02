@@ -265,18 +265,26 @@
 /* config svg anime demo */
 
 #svg-anime {
-    width:200px;
-    height:200px;
+ 
+}
+#hippo {
+    fill: none;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    stroke-width: .25px;
+}
+#path {
+    fill: none;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    stroke-width: .25px;
 }
 .box-trans {
     fill: none;
     stroke: #fff;
     stroke-miterlimit: 10;
     stroke-width: .25px;
-    transform-box: fill-box !important;
-
-    transform-origin: center!important;
-
+ 
 }
 
 #gr-svg-box .boxtrans:nth-child(1) {
@@ -288,15 +296,7 @@
     animation-delay: 0.5;
 }
 
-#gr-svg-box .boxtrans:nth-child(3) {
-    animation: rotation 1s;
-    animation-delay: 1;
-}
 
-#gr-svg-box .boxtrans:nth-child(4) {
-    animation: rotation 1s;
-    animation-delay: 1.5;
-}
 
 @keyframes rotation {
     from { transform: rotate(0)}

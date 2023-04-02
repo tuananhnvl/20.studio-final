@@ -14,8 +14,7 @@ import usePageTransition from '.././hooks/usePageTransition';
 import IntroVid from '../components/IntroVid';
 import '.././styles/HomeNew.css'
 import SliderPartners from '../components/SliderPartners';
-import Navbar from '../components/Navbar'
-import Grid from '../components/Grid'
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const images = {
@@ -64,7 +63,46 @@ export default function Home() {
 
     let ctx = gsap.context(() => {
 
-    
+      ScrollTrigger.create({
+
+        trigger: ".services-section-inpage",
+        scroller: '.container',
+        scrub: true,
+        pin: true,
+        // markers: true,
+        start: "top top",
+        end: "+=420%",
+
+
+
+        animation: gsap.timeline().set(".services-section-inpage .item", {
+          x: (window.innerWidth - 256) / 3 + 64
+        }, "actionChild")
+
+
+
+          .fromTo(".services-section-inpage .item a:nth-child(1)", {
+            yPercent: 80,
+
+            scale: 2.2
+          }, {
+            yPercent: 0,
+
+            scale: 1,
+          }, "actionChild")
+
+          .from(".services-section-inpage .item a:nth-child(2)", {
+            yPercent: 150,
+            x: ((window.innerWidth - 256) / 3) / 2 + 64
+          }, "<")
+          .from(".services-section-inpage .item a:nth-child(3)", {
+            yPercent: 160,
+            x: ((window.innerWidth - 256) / 3) / 2 + 64
+          }, "<")
+          .to(".services-section-inpage .item", {
+            x: 0
+          })
+      });
     })
     return () => ctx.revert();
 
@@ -73,36 +111,43 @@ export default function Home() {
 
   return (
     <>
-    <div className='container'>
-      <Navbar/>
-      <Grid/>
-      <section data-scroll-section className='warpper-homepage'>
-        <div className='hero-section' data-scroll-container>
-          <div className='text'>
-            <h2>20 Studio</h2>
-            <p>Chúng tôi chuyên cung cấp dịch vụ gia công các mẫu thiết kế</p>
-            <a>Về chúng tôi</a>
+      <section className='container'>
+        <div className='warpper-content hero-section' style={{ marginBottom: '10vh' }}>
+          <div className='img-hero-sec'>
+          </div>
+          <div className='content'>
+            <div className='title'>
+              <span>WHERE DREAMS</span>
+              <span>COME TRUE</span>
+            </div>
+            <div className='name'>
+              <h2>20STUDIO</h2>
+            </div>
+            <div className='more'>
+              <p>We believe our industry is blinded by numbers. While buying decisions are based on emotion.</p>
+              <a value='/sampledev' onClick={(event) => redirectPage(event)} >About us <AiOutlineArrowRight /></a>
+            </div>
           </div>
         </div>
-        <div className='clipwelcome-section' data-scroll-container>
-            <div className='text'>
-              <span>REEL</span>
-            </div>
-            <div className='clip'>
-              <img src={images.image3} alt='' />
-            </div>
+
+
+
+
+
+
+        <div className='services-section-inpage'>
+          <div className='title'>
+            <a className='heading-clone'>Services</a>
+            <a className='sub-heading'><p>Explore our services</p></a>
+          </div>
+          <span></span>
+          <div className='item'>
+            <a><img src={images.sample1} alt='' /></a>
+            <a><img src={images.sample2} alt='' /></a>
+            <a><img src={images.sample3} alt='' /></a>
+          </div>
         </div>
-        <div className='servcies_home-section' data-scroll-container>
-            <div className='title'>
-                <h2>Servcies</h2>
-            </div>
-            <div className='list'>
-                <a><span id='brading_servcies'>Branding</span></a>
-                <a><span id='sampledev_servcies'>Sample Develop</span></a>
-                <a><span id='products_servcies'>Production</span></a>
-            </div>
-        </div>
-        <div className='passion-section' data-scroll-container>
+        <div className='passion-section'>
             <div className='content'>
               <div className='text'>with craftmentship, creativity and love, we turn our client’s ideas into peice of art</div>
               <div className='img'><img src={images.image4} alt=''/></div>
@@ -117,11 +162,7 @@ export default function Home() {
 
 
         <Contact />
-
       </section>
-    </div>
-   
-       
     </>
   )
 }
