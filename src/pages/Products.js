@@ -26,25 +26,47 @@ export default function Products() {
     useEffect(() => {
 
         let targets = gsap.utils.toArray('.box-trans');
-        let y = document.querySelector('#line')
+      //  let y = document.querySelector('#line')
+        let u = document.querySelector('#path')
         console.log(targets)
-        console.log(y.getTotalLength())
+       // console.log(y.getTotalLength())
         let l = targets[3].getTotalLength()
 
-     
-       
+        let localPos = {x : 0,y:0}
+        let po = MotionPathPlugin.convertCoordinates(u,targets[3],localPos)
+        let rawPath = MotionPathPlugin.getRawPath("#path");
+        console.log(rawPath)
         gsap.timeline({})
         .set('#hippo',{
-            scale: .25,
+            scale: .5,
             strokeDasharray:400,
             duration:0
         })
-        .to('#hippo',{
-            scale: .25,
-           
-            duration:2
+        .set('.cls-3',{
+          //  scale: .25,
+          strokeDasharray:[1,1000],
+            duration:0
         })
-        .fromTo('.cls-3', {strokeDashoffset:400}, {strokeDashoffset:0,strokeDasharray:10000,duration:3},"<")
+        .set('.cls-2',{
+            //  scale: .25,
+            strokeDasharray:[1,1000],
+              duration:0
+          })
+        .to('.cls-3',{
+            //  scale: .25,
+
+            strokeDasharray:[1000,1],
+            stagger: 0.05,
+            ease: Power2.easeIn,
+              duration:1
+          })
+          .to('.cls-22' , {
+            strokeDasharray:[1000,1],
+            stagger: 0.05,
+            ease: Power2.easeIn,
+              duration:1
+          })
+      //  .fromTo('.cls-3', {strokeDashoffset:400}, {strokeDashoffset:0,strokeDasharray:5000,duration:7},"<")
      /*    .to('#path',{
             scale: .5,
             x: 200,
@@ -55,60 +77,38 @@ export default function Products() {
        
         .set(targets, {strokeDasharray:[40,20,4],duration:2})
        
-        .to(targets, {
-            rotation: 360,
-            transformOrigin: "50% 50%",
-        
-            stagger: 0.15,
-            duration: 1
-        })
+     
         .to(targets, {
             attr:{rx:"40"},
             transformOrigin: "50% 50%",
-            scale:.2,
+            scale:.1,
             stagger: 0.15,
             delay: .5,
             duration:2,
             ease:Power2.easeIn
         })
         .fromTo(targets, {strokeDashoffset:400}, {strokeDashoffset:0,strokeDasharray:[400],duration:3},"<")
-        .fromTo(targets,{
-            rotation: '0',
-        }, {
-            rotation: '90deg',
-            transformOrigin: "50% 150%",
-            duration: 1
-        })
+      
         //path d="m100,100c56 => x=100,y=100 , targets item now is rect , go get pos XY of rect
         // => arr [ ]
-        .to(targets,{
-            x: 0,
-            y: 0,
-            stagger: 0.15,
-            ease: "power1.inOut",
-            duration:1
-        })
-        .to(targets,{
-            x: 50,
-            y: 70,
-            stagger: 0.15,
-            ease: "power1.inOut",
-            duration:1
-        })
+       
         .to(targets, {
             motionPath: {
-                path: "#path",
-                align: "#path",
+                path: "#hippo",
+                align: "#hippo",
                 alignOrigin: [0.5, 0.5],
                 autoRotate: true
             },
+            fill:'rbg(225,225,225,0)',
             transformOrigin: "50% 50%",
-            duration: 5,
-            stagger: 0.15,
+            duration: 2,
+            stagger: 0.35,
+            repeat:-1,
             ease: "power1.inOut"
         })
         .to(targets,{
-            attr:{rx:"0"},
+        
+            attr:{rx:Math.random()*40 + 20},
             duration:4 
         },"<")
        
@@ -242,19 +242,12 @@ export default function Products() {
                     <svg xmlns="http://www.w3.org/2000/svg" id="svg-anime" data-name="Layer 2" viewBox="0 0 600 300">
                         
                         <g id="layerSVG" data-name="Layer 1">
-                        <line
-    x1="0"
-    y1="100"
-    x2="300"
-    y2="100"
-    id='line'
-    stroke="white"
- />
+                        
                             <rect class="box-trans" x=".12" y=".12" width="80" height="80" />
                             <rect class="box-trans" x=".12" y="80.17" width="80" height="80" />
                             <rect class="box-trans" x="80.12" y="80.17" width="80" height="80" />
                             <rect class="box-trans" x="80.12" y=".12" width="80" height="80" />
-                            <path id="path" d="m100,100c56.24-59.18,133.7-81.96,198.73-59.49,57.1,19.72,119.08,79.32,106.33,132.91-13.49,56.72-107.89,94.89-175.95,62.03-58.93-28.46-78.23-100.58-68.35-154.43C184.52,52.56,258.45-9.66,308.8,1.89c85.47,19.6,162.45,265.41,55.7,388.61-61.98,71.53-185.58,101.34-225.32,59.49-57.34-60.37,46.9-283.55,118.99-279.75,57.4,3.03,119.96,151.33,78.48,202.53-43.37,53.53-219.49,24.45-296.2-87.34C-12.13,208.82-12.2,101.83,36.65,6.95"/>
+                            <path style={{display:'none'}}id="path" d="m100,100c56.24-59.18,133.7-81.96,198.73-59.49,57.1,19.72,119.08,79.32,106.33,132.91-13.49,56.72-107.89,94.89-175.95,62.03-58.93-28.46-78.23-100.58-68.35-154.43C184.52,52.56,258.45-9.66,308.8,1.89c85.47,19.6,162.45,265.41,55.7,388.61-61.98,71.53-185.58,101.34-225.32,59.49-57.34-60.37,46.9-283.55,118.99-279.75,57.4,3.03,119.96,151.33,78.48,202.53-43.37,53.53-219.49,24.45-296.2-87.34C-12.13,208.82-12.2,101.83,36.65,6.95"/>
                             <path id="hippo" x='0' y ='0' class="st1" d="M148.802,244.876c2.737-36.735,16.107-69.079,40.099-97.061
   c27.038-31.596,60.924-47.386,101.629-47.386c15.481,0,38.483,2.447,69.024,7.287c30.541,4.886,53.533,7.278,69.033,7.278
   c23.693,0,57.868,8.847,102.526,26.477c7.914,3.009,17.471,11.239,28.701,24.59c6.381,7.886,16.256,19.769,29.616,35.568
