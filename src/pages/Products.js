@@ -120,7 +120,7 @@ export default function Products() {
         <section className='container' data-scroll-section>
             <Navbar />
             <section >
-                <div>
+                {/* <div>
                 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 4988.7 2423.01">
  
   <g id="Layer_1-2" data-name="Layer 1">
@@ -275,7 +275,7 @@ export default function Products() {
   c-2.121-10.296-5.456-18.358-10.015-24.132C155.332,279.36,147.578,260.665,148.802,244.876z"/>
                         </g>
                     </svg>
-                </div>
+                </div>*/}
                 <div className='products_banner' data-scroll-container>
                     <a><img src={images.image1} alt='' /></a>
                     <h2>SẢN XUẤT</h2>
