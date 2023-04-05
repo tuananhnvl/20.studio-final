@@ -7,8 +7,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import gsap, { Power2 } from 'gsap'
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import Navbar from '../components/Navbar'
-import Grid from '../components/Grid';
+
 
 import '.././styles/svg-style.css'
 const images = {
@@ -23,24 +22,10 @@ const images = {
 
 gsap.registerPlugin(CSSRulePlugin, MotionPathPlugin);
 export default function Products() {
-    // useLocoScroll(true)
+
     const { redirectPage } = usePageTransition();
     const [offTask,setOffTask] = useState(false)
-    useEffect(() => {
-        if(!offTask) {return}
-        const scrollEl = document.querySelector('.container');
-        console.log('========== found scrollEl')
-        console.log(scrollEl.getBoundingClientRect().height)
-        console.log(`useLocoScroll start!`)
-        
-        let locoScroll = new LocomotiveScroll({
-          el: scrollEl,
-          smooth: true,
-          multiplier: 1.2,
-        });
-    
-      },[offTask])
-
+  
     useEffect(() => {
         if(!offTask) {return}
         let targets = gsap.utils.toArray('.box-trans');
@@ -136,7 +121,6 @@ export default function Products() {
 
     return (
         <section className='container' data-scroll-section>
-            <Navbar />
             <section >
                 {/* <div>
                 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 4988.7 2423.01">

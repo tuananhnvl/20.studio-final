@@ -1,15 +1,13 @@
 import React, { useEffect,useState,useRef } from 'react'
 import '.././styles/pattern-services-item.css'
 import '.././styles/develop_product.css'
-import useLocoScroll from '.././hooks/useLocoScroll';
+
 import gsap, { Power2 } from 'gsap';
 import Contact from '../components/Contact'
 import { useNavigate } from 'react-router-dom';
 import usePageTransition from '../hooks/usePageTransition.js'
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
-import Navbar from '../components/Navbar'
-import Grid from '../components/Grid';
-import LocomotiveScroll from 'locomotive-scroll';
+
 const images = {
     image1: require('.././asset/sampledev/1.png'),
     image3: require('.././asset/sampledev/2.png'),
@@ -26,14 +24,6 @@ export default function SampleDev() {
 
     const { redirectPage } = usePageTransition();
     const [offTask,setOffTask] = useState(false)
-    const listitemBanner = useRef(null)
-
-    //set prop
-
-    const propitemBanner = [
-        [24, 36], [51, 88], [78, 44], [74, 0]
-    ]
-   
 
     return (
         <>

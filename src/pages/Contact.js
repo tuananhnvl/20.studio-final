@@ -13,20 +13,7 @@ const images = {
 export default function Contact() {
   const { redirectPage } = usePageTransition();
   const [offTask,setOffTask] = useState(false)
-  useEffect(() => {
-    if(!offTask) {return}
-      const scrollEl = document.querySelector('.container');
-      console.log('========== found scrollEl')
-      console.log(scrollEl.getBoundingClientRect().height)
-     
 
-      let locoScroll = new LocomotiveScroll({
-          el: scrollEl,
-          smooth: true,
-          multiplier: 1.2,
-      });
-
-  }, [])
   return (
     <>
     <div className='container'>
