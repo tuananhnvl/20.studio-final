@@ -15,11 +15,12 @@ import Services from "./pages/Services";
 import SampleDev from "./pages/SampleDev"
 import PatternMaking from "./pages/PatternMaking"
 import LoadingPage from "./components/LoadingPage"
+import CanvasThree from './components/CanvasThree';
 import Products from './pages/Products';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useLocoScroll from './hooks/useLocoScroll';
 import { gsap } from 'gsap';
-import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import { LocomotiveScrollProvider,useLocomotiveScroll } from "react-locomotive-scroll";
 import PageNotFound from './pages/PageNotFound'
 const Test = lazy(() => import("./components/Test"));
 function App() {
@@ -29,8 +30,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   console.log('App Render !')
   const refDom = useRef(null);
-
-
+  const refDomContainer = useRef(null)
+ 
   useEffect(() => {
     const delay = setTimeout(() => {
       setIsLoading(false);
@@ -42,6 +43,7 @@ function App() {
     <>
       <Navbar />
       <Grid />
+      <CanvasThree />
       <LocomotiveScrollProvider
         options={
           {
@@ -58,14 +60,14 @@ function App() {
         containerRef={refDom}
         location={pathname}
         onLocationChange={scroll => scroll.scrollTo(0, { duration: 0, disableLerp: true })} // If you want to reset the scroll position to 0 for example
-        onUpdate={() => console.log('Updated, but not on location change!')} // Will trigger on 
+ 
       >
-        <main data-scroll-container ref={refDom}>
+        <main data-scroll-container ref={refDom}   >
           <Routes>
             <Route path="/" element={
               <>
                 <div id='transition-section'><h2></h2></div>
-                <div className='container'>
+                <div className='container'> 
                   <Home />
                 </div>
               </>

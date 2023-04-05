@@ -32,8 +32,8 @@ export default function Home() {
   const { redirectPage } = usePageTransition();
   const [offTask, setOffTask] = useState(false)
   const listStickerSpace = document.querySelectorAll('.stickerSpace')
+  const contentHeroSection = useRef(null)
 
-  
   const stickerContext = [
     `<span>craftmenship</span>`,
     `<span>passion</span>`,
@@ -41,7 +41,7 @@ export default function Home() {
   ]
 
   useEffect(() => {
-    
+  
     if (listStickerSpace.length > 2) {
       for (let y = 0; y < 5; y++) {
         // console.log(y)
@@ -53,29 +53,47 @@ export default function Home() {
 
 
   }, [listStickerSpace])
+ 
 
+  useEffect(()=>{
+    gsap.fromTo(contentHeroSection.current,{
+    
+      opacity:0,
+      y: -100,
+    },{
+      delay:1,
+      opacity:1,
+      y: 0,
+      stagger:0.15,
+      duration:1
+    })
+  },[contentHeroSection])
   return (
     <>
 
-      <section data-scroll-section className='warpper-homepage'>
+      <section data-scroll-section className='warpper-homepage'  >
         <div className='hero-section' data-scroll-container>
-          <div className='text'>
+          <div className='pin-menu'>
+            <a value='/' onClick={redirectPage}>Home</a>
+                <a value='/sampledev' onClick={redirectPage}>Sample Dev</a>
+                <a value='/products' onClick={redirectPage}>Products</a>
+                <a value='/contact' onClick={redirectPage}>Contact</a>
+            </div>
+          <div className='text' ref={contentHeroSection} >
             <h2>20 Studio</h2>
             <p>Chúng tôi chuyên cung cấp dịch vụ gia công các mẫu thiết kế</p>
-            <a value='/sampledev' onClick={redirectPage}>Sample Dev</a>
-            <a value='/products' onClick={redirectPage}>Products</a>
-            <a value='/contact' onClick={redirectPage}>Contact</a>
+         
           </div>
         </div>
         <div className='clipwelcome-section' data-scroll-container>
           <div className='text'>
-            <span>REEL</span>
+            <span >REEL</span>
           </div>
           <div className='clip'>
             <img src={images.image3} alt='' />
           </div>
         </div>
-        <div className='servcies_home-section' data-scroll-container>
+        <div className='servcies_home-section' data-scroll-container >
           <div className='title'>
             <h2>Servcies</h2>
           </div>

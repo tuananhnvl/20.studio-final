@@ -1,6 +1,25 @@
 .warpper-homepage > div:nth-child(n+2) {
     
 }
+.pin-menu {
+    position: fixed;
+    top:50px;
+    left:50px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 99999;
+
+    display: flex;
+}
+.pin-menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    border: 1px solid   rgb(104, 104, 104);
+    color: white;
+}
 /* passion section */
 .passion-section {
     height: 100vh;

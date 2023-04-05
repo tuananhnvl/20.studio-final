@@ -121,6 +121,12 @@ export default function Products() {
 
     return (
         <section className='container' data-scroll-section>
+             <div className='pin-menu'>
+                    <a value='/' onClick={redirectPage}>Home</a>
+                        <a value='/sampledev' onClick={redirectPage}>Sample Dev</a>
+                        <a value='/products' onClick={redirectPage}>Products</a>
+                        <a value='/contact' onClick={redirectPage}>Contact</a>
+                    </div>
             <section >
                 {/* <div>
                 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 4988.7 2423.01">
@@ -281,10 +287,8 @@ export default function Products() {
                 <div className='products_banner' data-scroll-container>
                     <a><img src={images.image1} alt='' /></a>
                     <h2>SẢN XUẤT</h2>
-                    <div className='gr-btn-demo'>
-                        <button value='/' onClick={redirectPage} >GO TO HOME PAGE</button>
-                        <button value='/sampledev' onClick={redirectPage} >Sample Dev</button>
-                    </div>
+                   
+
                 
                 </div>
 

@@ -154,7 +154,7 @@ export default function PlaneGeo() {
                 .fromTo(item.position, {
                     z: -220
                 }, {
-                    z: 0,
+                    z: -100,
                     duration: 3,
                     ease: Power2.easeOut,
                     delay: .7,

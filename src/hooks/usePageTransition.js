@@ -9,6 +9,7 @@ const usePageTransition = () => {
   useEffect(() => {
     console.log('usePageTransition running ... ')
     const transitiondom = document.querySelector('#transition-section')
+    console.log(transitiondom)
     const styletransitiondom = window.getComputedStyle(transitiondom);
 
     if (parseFloat(styletransitiondom.getPropertyValue('--opacity')) === null || parseFloat(styletransitiondom.getPropertyValue('--opacity')) === 0) {
@@ -17,7 +18,7 @@ const usePageTransition = () => {
     }
 
     if (parseFloat(styletransitiondom.getPropertyValue('--opacity')) === 1) {
-      let tl = gsap.timeline({});
+      /* let tl = gsap.timeline({});
       tl.set(transitiondom, {
         "--posX": `0%`,
         "--posY": `0%`,
@@ -34,7 +35,7 @@ const usePageTransition = () => {
         duration: 0,
 
         onComplete: () => setIsTransitioning(false)
-      },"endTransOut")
+      },"endTransOut") */
     }
   }, [isTransitioning]);
 
@@ -55,7 +56,10 @@ const usePageTransition = () => {
 
       function redirectNow(namepage) {
         transitiondom.childNodes[0].innerHTML = `${namepage}`;
-        let tl = gsap.timeline({
+        setIsTransitioning(false);
+        navigate(`${s}`);
+
+       /*  let tl = gsap.timeline({
           onComplete: () => {
             setIsTransitioning(false);
             navigate(`${s}`);
@@ -71,7 +75,7 @@ const usePageTransition = () => {
           "--size": `150%`,
           ease: "power4.out",
           duration: 1.5,
-        });
+        }); */
       }
     } else {
       console.log('err redirectPage');

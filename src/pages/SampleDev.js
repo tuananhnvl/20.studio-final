@@ -34,8 +34,14 @@ export default function SampleDev() {
                 <section data-scroll-section>
 
                 <div className='dev_product--banner' >
-                    <a value='/' onClick={redirectPage} >GO TO HOME PAGE</a>
-                    <a value='/patternmaking' onClick={redirectPage} >patternmaking</a>
+                    <div className='pin-menu'>
+                    <a value='/' onClick={redirectPage}>Home</a>
+                        <a value='/sampledev' onClick={redirectPage}>Sample Dev</a>
+                        <a value='/products' onClick={redirectPage}>Products</a>
+                        <a value='/contact' onClick={redirectPage}>Contact</a>
+                    </div>
+
+              
                     <div className='text hero-text'>
                         <span>KIẾN TẠO</span>
                         <span>Ý TƯỞNG</span>
