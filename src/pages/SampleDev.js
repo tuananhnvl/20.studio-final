@@ -18,6 +18,8 @@ const images = {
     image5: require('.././asset/sampledev/5.png'),
     image6: require('.././asset/sampledev/6.png'),
     image7: require('.././asset/sampledev/7.png'),
+    image11: require('.././asset/sampledev/11.png'),
+    image12: require('.././asset/sampledev/12.png'),
 };
 gsap.registerPlugin(CSSRulePlugin);
 export default function SampleDev() {
@@ -70,9 +72,9 @@ export default function SampleDev() {
                 <div className='dev_product--banner' data-scroll-container>
                     <a value='/' onClick={redirectPage} >GO TO HOME PAGE</a>
                     <a value='/patternmaking' onClick={redirectPage} >patternmaking</a>
-                    <div className='text'>
-                        <span>PHÁT TRIỂN</span>
-                        <span>THIẾT KẾ</span>
+                    <div className='text hero-text'>
+                        <span>KIẾN TẠO</span>
+                        <span>Ý TƯỞNG</span>
                     </div>
                     <div className='gr-img'>
                         <a style={{ backgroundImage: `url(${images.image2})` }}>
@@ -106,7 +108,7 @@ export default function SampleDev() {
                 </div>
                 {/* 4 step */}
                 <div className="wapper-step-dev_product" data-scroll-container>
-                    <div className='step1-dev_products consuctor--gridsys'>
+                    <div className='step1-dev_products consuctor--gridsys steps-dev_products'>
                         <div className='img'>
                             <img src={images.image1} alt="" />
                         </div>
@@ -123,7 +125,7 @@ export default function SampleDev() {
                         </div>
                     </div>
 
-                    <div className='step2-dev_products consuctor--gridsys'>
+                    <div className='step2-dev_products consuctor--gridsys steps-dev_products'>
                         <div className='img'>
                             <img src={images.image4} alt="" />
                         </div>
@@ -134,9 +136,8 @@ export default function SampleDev() {
                             <div className="des">
                                 Chúng tôi tại 20studio sẵn sàng tạo ra các quy trình độc đáo giúp khách hàng thúc đẩy sự sáng tạo và khám phá những điều mới lạ.
                             </div>
-                        </div>
-                        <div className='detail'>
-                            <ul>
+                            <div className='detail'>
+                                <ul>
                                 <li><a>Double-face</a></li>
                                 <li><a>Digital print</a></li>
                                 <li><a>Washing and dyeing</a></li>
@@ -146,11 +147,18 @@ export default function SampleDev() {
                                 <li><a>Thermo-adhesive applications</a></li>
                                 <li><a>Embossing / Debossing</a></li>
                                 <li><a>Heat sealing</a></li>
-                            </ul>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className='img-behind s2-img1'>
+                            <img src={images.image11} alt='' />
+                        </div>
+                        <div className='img-behind s2-img2'>
+                            <img src={images.image12} alt='' />
                         </div>
                     </div>
 
-                    <div className='step3-dev_products consuctor--gridsys' >
+                    <div className='step3-dev_products consuctor--gridsys steps-dev_products' >
                         <div className='img'>
                             <img src={images.image5} alt="" />
                         </div>
@@ -167,7 +175,7 @@ export default function SampleDev() {
                         </div>
                     </div>
 
-                    <div className='step4-dev_products consuctor--gridsys' >
+                    <div className='step4-dev_products consuctor--gridsys steps-dev_products' >
                         <div className='img'>
                             <img src={images.image3} alt="" />
                         </div>

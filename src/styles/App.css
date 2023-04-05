@@ -35,6 +35,12 @@
   --margin-desktop: 64px;
   --maxW1440 : 1440px;
   --maxW : calc(100vw - 5vw);
+
+  --hero-text:calc(100vw / 9);
+
+  --margin-desk: 64px;
+
+  --ff-text:Jose;
 }
 html,body {
   
@@ -631,4 +637,15 @@ border-bottom: 1px solid white;
 .page404 .bottom-page  {
   left:-50px;
   top:97vh;
+}
+
+
+.hero-text {
+  
+}
+
+
+.hero-text>span {
+  font-size: var(--hero-text);
+  
 }

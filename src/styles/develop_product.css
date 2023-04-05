@@ -30,13 +30,12 @@
 
 .dev_product--banner .text span {
     font-family: NVNValky;
-    font-size: 142px;
+    font-weight: 500;
     
-    line-height: 100%;
-    letter-spacing: 10px;
+    line-height: 150%;
+    letter-spacing: 5px;
 
     width: fit-content;
-    height: 100px;
     display: block;
     
     position: relative;
@@ -44,11 +43,11 @@
    
 }
 .dev_product--banner .text span:nth-child(1)  {
-    left: 10%;
+    left: calc(var(--margin-desk) + 5%) ;
 }
 .dev_product--banner .text span:nth-child(2)  {
-    margin: 0 auto;
-    margin-top: 100px;
+    /*margin: 0 auto; /*chu se nho di theo repon nen ko lo margin auto bi out viewport*/
+    left: calc(var(--margin-desk) + 28%)
 }
 
 
@@ -155,68 +154,92 @@
     height:auto;
 }
 
-.step1-dev_products ,
-.step2-dev_products ,
-.step3-dev_products ,
-.step4-dev_products {
-    margin: 40vh auto;
+.steps-dev_products {
+    margin: 45vh auto;
     position:relative;
-  
+
+    
+
+    min-height:; /*=-------------------------------------------=*/
 }
-.step1-dev_products .img,
-.step2-dev_products .img,
-.step3-dev_products .img,
-.step4-dev_products .img{
+
+
+
+
+
+
+
+
+
+
+
+
+/*phaanf nay chung cua cac container text va img*/
+
+
+
+
+.steps-dev_products .img {
     position: relative;
-    height:80vh;
     overflow: hidden;
 }
-.step1-dev_products .text,
-.step2-dev_products .text,
-.step3-dev_products .text,
-.step4-dev_products .text{
-    max-width: calc(var(--maxW1440) / 1.5);
+
+
+.steps-dev_products .text {
+    /*max-width: calc(var(--maxW1440) / 1.5);*/
     position: absolute;
-    height: fit-content;
+    /*height: fit-content;*/
     z-index: 20;
 }
 
-.step1-dev_products .title,
-.step2-dev_products .title,
-.step3-dev_products .title,
-.step4-dev_products .title{
+.steps-dev_products .text .title{
     font-family: NVNValky;
-    font-size: 95px;
-    line-height: 120%;
-    letter-spacing: 0.01em;
+    font-size: 48px;
+    line-height: 150%;
+    letter-spacing: 3%;
     text-transform: uppercase;
 }
-.step1-dev_products .des,
-.step2-dev_products .des,
-.step3-dev_products .des,
-.step4-dev_products .des {
-    padding: 32px 32px 0 64px;
-    font-family: PoiretOne;
-    font-size: 26px;
-    
-    line-height: 170%;
-    letter-spacing: 0.01em;
-  
+
+
+.steps-dev_products .text .des {
+    font-family: var(--ff-text);
+    font-size: 16px;
+    font-weight:100;
+    line-height: 150%;
+    letter-spacing: 1.8px;
+
     max-width: calc(var(--maxW1440) / 2.5);
 }
+
+
 /* config each step */
 /* step 1 */
+
+
+
 .step1-dev_products .img {
     grid-column-start: 1;
-    grid-column-end:4;
+    grid-column-end:3;
     height: fit-content;
 }
+
+
+
+
+
 .step1-dev_products .text {
 
-    top:65%;
+    top:25%;
     right:0;
-    transform: translateY(-50%);
+
+    width:40%;
+
+
 }
+
+
+
+
 .step1-dev_products .img img {
     width: 100%;
     height: auto;
@@ -228,10 +251,12 @@
 
 .step1-dev_products .img-behind {
     position: absolute;
-    bottom: -200px;
-    right: -110px;
+    bottom: -55%;
+    right: 0px;
 
-    width: 400px;
+    width: 30%;
+
+    margin-right: 10%;
   
     height: fit-content;
 }
@@ -249,21 +274,30 @@
     height:auto;
 }
 /* step 2 */
-.step2-dev_products .img {
-    grid-column-start: 2;
-    grid-column-end: 6;
-    grid-row:1;
-    height: 700px;
-}
-.step2-dev_products .text {
-    position: absolute;
-    height: fit-content;
-    top:520px;
-    left:0;
-    transform:translateY(-50%);
+.step2-dev_products {
+    min-height: 600px;
+    margin: 40vh auto 90vh auto;
 }
 
-.step2-dev_products .img img {
+
+.step2-dev_products .img {
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    height: 700px;
+}
+
+
+
+.step2-dev_products .text {
+    position: absolute;
+    top:35%;
+    left:40%;
+
+    width:40%;
+}
+
+.step2-dev_products .img img { /*ko can thiet*/
     width: 100%;
     height: auto;
     display: block;
@@ -272,34 +306,33 @@
 .step2-dev_products .title,.step2-dev_products .des {
     text-align: left;
 }
-.step2-dev_products .detail {
-    grid-column-start: 2;
+.step2-dev_products .text .detail {
+    grid-column-start: 3;
     grid-column-end: 6;
-    grid-row:2;
+    /*grid-row:2;*/
 }
-.step2-dev_products .detail ul {
+.step2-dev_products .text .detail ul {
     list-style:none;
-    margin:10vh 0;
+    margin: 3rem 0;
     padding:0;
 }
-.step2-dev_products .detail ul li {
+.step2-dev_products .text .detail ul li {
     width:100%;
     height:fit-content;
 }
-.step2-dev_products .detail ul li a {
+.step2-dev_products .text .detail ul li a {
   
-    font-family: PoiretOne;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 54px;
+    font-family: var(--ff-text);
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 44px;
     letter-spacing: 0.03em;
-    text-align: left;
+
+
     position:relative;
     display:block;
-    width:100%;
-    height:100%;
+
     padding: 16px 0 16px 0;
-    
 }
 .step2-dev_products .detail ul li a:after {
     content:"";
@@ -310,10 +343,48 @@
     width:100%;
     background:rgb(225,225,225,.9);
 }
+
+.step2-dev_products .img-behind {
+    position: absolute;
+    display: block;
+    height:fit-content;
+}
+.step2-dev_products .img-behind:before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0.5);
+}
+
+
+.step2-dev_products .img-behind img {
+    height: auto;
+    width: 100%;
+}
+
+.s2-img1 {
+    top: 130%;
+    left: 20%;
+    width:30%;
+    height:fit-content;
+    
+}
+
+.s2-img2 {
+    top: 180%;
+    right:5%;
+    width:30%;
+}
+
+
+
 /*  step 3 */
 
 .step3-dev_products .img {
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-column-end: 6;
     height: 700px;
 
@@ -326,6 +397,7 @@
     top:550px;
     left:0;
     transform:translateY(-50%);
+    width:30%;
 }
 
 .step3-dev_products .img img {
@@ -340,11 +412,12 @@
 
 
 .step3-dev_products .img-behind {
-    position: relative;
-    grid-row: 1;
-    grid-column-start: 4;
-    grid-column-end: 6;
-    transform: translate(-25%,30%);
+    position: absolute;
+    width:30%;
+    right:20%;
+    top:50%;
+    
+    
     z-index:10;
     height: fit-content;
 }
