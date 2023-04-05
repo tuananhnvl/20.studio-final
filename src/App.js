@@ -5,7 +5,7 @@ import './styles/Responve-Pagews.css'
 import Navbar from './components/Navbar';
 import Grid from './components/Grid'
 import './fonts/Marcellus-Regular.ttf';
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes,useLocation } from "react-router-dom";
 //import Test from "./components/Test";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
@@ -25,6 +25,7 @@ const Test = lazy(() => import("./components/Test"));
 function App() {
   gsap.registerPlugin(ScrollTrigger);
   //useLocoScroll(true)
+  const { pathname } = useLocation()
   const [isLoading, setIsLoading] = useState(true);
   const mainContainer = useRef(null)
   console.log('App Render !')
@@ -61,10 +62,8 @@ function App() {
       }
       
       containerRef={ref}
-        onLocationChange={() => {
-          window.scrollTo(0, 0)
-          console.log('have change ...')
-        }} // If you want to reset the scroll position to 0 for example
+      location={pathname}
+        onLocationChange={ scroll => scroll.scrollTo(0, { duration: 0, disableLerp: true })} // If you want to reset the scroll position to 0 for example
   onUpdate={() => console.log('Updated, but not on location change!')} // Will trigger on 
       >
       <main data-scroll-container ref={ref}>
