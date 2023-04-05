@@ -17,7 +17,7 @@ import SliderPartners from '../components/SliderPartners';
 import Navbar from '../components/Navbar'
 import Grid from '../components/Grid'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import LocomotiveScroll from 'locomotive-scroll';
 const images = {
   image1: require('.././asset/gallery/3.png'),
   image2: require('.././asset/gallery/5.png'),
@@ -33,22 +33,25 @@ const images = {
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
-  useLocoScroll(true)
-  const { redirectPage } = usePageTransition();
+ //useLocoScroll(true)
+ const { redirectPage } = usePageTransition();
+ const [offTask,setOffTask] = useState(false)
 
-
-  //
   const stickerContext = [
-    `<span>craftmenship</span>`,
-    `<span>passion</span>`,
-    `<span>creaticity</span>`
+      `<span>craftmenship</span>`,
+      `<span>passion</span>`,
+      `<span>creaticity</span>`
   ]
-  const listStickerSpace = document.querySelectorAll('.stickerSpace')
-  useEffect(() => {
-    console.log(listStickerSpace)
+  
+
+ 
+
+
+  useEffect(() => {    
+    const listStickerSpace = document.querySelectorAll('.stickerSpace')
     if (listStickerSpace.length > 2) {
       for (let y = 0; y < 5; y++) {
-        console.log(y)
+       // console.log(y)
         listStickerSpace[0].innerHTML += `${stickerContext[0]}`
         listStickerSpace[1].innerHTML += `${stickerContext[1]}`
         listStickerSpace[2].innerHTML += `${stickerContext[2]}`
@@ -56,32 +59,33 @@ export default function Home() {
     }
 
 
-  }, [listStickerSpace])
-
-
-  // effect section services 
-  useEffect(() => {
-
-    let ctx = gsap.context(() => {
-
-    
-    })
-    return () => ctx.revert();
-
   }, [])
 
+  useEffect(() => {
+    if(!offTask) {return}
+const scrollEl = document.querySelector('.container');
+console.log('========== found scrollEl')
+console.log(scrollEl.getBoundingClientRect().height)
 
+
+let locoScroll = new LocomotiveScroll({
+    el: scrollEl,
+    smooth: true,
+    multiplier: 1.2,
+});
+
+}, [offTask])
   return (
     <>
-    <div className='container'>
-      <Navbar/>
-      <Grid/>
-      <section data-scroll-section className='warpper-homepage'>
+
+<section data-scroll-section className='warpper-homepage'>
         <div className='hero-section' data-scroll-container>
           <div className='text'>
             <h2>20 Studio</h2>
             <p>Chúng tôi chuyên cung cấp dịch vụ gia công các mẫu thiết kế</p>
-            <a>Về chúng tôi</a>
+            <a  value='/sampledev' onClick={redirectPage}>Sample Dev</a>
+            <a  value='/products' onClick={redirectPage}>Products</a>
+            <a  value='/contact' onClick={redirectPage}>Contact</a>
           </div>
         </div>
         <div className='clipwelcome-section' data-scroll-container>
@@ -119,7 +123,9 @@ export default function Home() {
         <Contact />
 
       </section>
-    </div>
+
+     
+
    
        
     </>

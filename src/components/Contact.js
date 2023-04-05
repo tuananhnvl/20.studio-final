@@ -3,7 +3,7 @@ import React from 'react'
 export default function Contact() {
   return (
     <>
-        <div className='contact-section'>
+        <div className='contact-section' data-scroll-container>
                 <div className='title'>
                 <h2>LET’S TALK</h2>
                 </div>
@@ -35,9 +35,9 @@ export default function Contact() {
                             <textarea  defaultValue="Notes"></textarea>
                         </div>
                         <div  className='nor button-send'>
-                            <a class="loop-holder">
-                            <div class="loop-holder__text">Send - Send - Send - Send - </div>
-                            <div class="loop-holder__text">Send - Send - Send - Send - </div>
+                            <a className="loop-holder">
+                            <div className="loop-holder__text">Send - Send - Send - Send - </div>
+                            <div className="loop-holder__text">Send - Send - Send - Send - </div>
                                
                             </a>
 

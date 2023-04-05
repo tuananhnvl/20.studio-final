@@ -7,12 +7,12 @@ const usePageTransition = () => {
  
   const navigate = useNavigate();
   useEffect(() => {
-    console.log('run ')
+    console.log('usePageTransition running ... ')
     const transitiondom = document.querySelector('#transition-section')
     const styletransitiondom = window.getComputedStyle(transitiondom);
 
     if (parseFloat(styletransitiondom.getPropertyValue('--opacity')) === null || parseFloat(styletransitiondom.getPropertyValue('--opacity')) === 0) {
-      console.log('Redirect direct');
+    //  console.log('Enter browser');
       return;
     }
 
@@ -32,6 +32,7 @@ const usePageTransition = () => {
       tl.to(transitiondom, {
         "--opacity": 0,
         duration: 0,
+
         onComplete: () => setIsTransitioning(false)
       },"endTransOut")
     }

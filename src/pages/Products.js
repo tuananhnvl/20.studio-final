@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '.././styles/Products.css'
 import Contact from '../components/Contact'
 import useLocoScroll from '.././hooks/useLocoScroll';
-import gsap,{Power2} from 'gsap'
+import usePageTransition from '.././hooks/usePageTransition';
+import LocomotiveScroll from 'locomotive-scroll';
+import gsap, { Power2 } from 'gsap'
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import Navbar from '../components/Navbar'
 import Grid from '../components/Grid';
+
 import '.././styles/svg-style.css'
 const images = {
     image1: require('.././asset/products/1.png'),
@@ -18,102 +21,117 @@ const images = {
 
 };
 
-gsap.registerPlugin(CSSRulePlugin,MotionPathPlugin);
+gsap.registerPlugin(CSSRulePlugin, MotionPathPlugin);
 export default function Products() {
-   // useLocoScroll(true)
-
- 
+    // useLocoScroll(true)
+    const { redirectPage } = usePageTransition();
+    const [offTask,setOffTask] = useState(false)
     useEffect(() => {
+        if(!offTask) {return}
+        const scrollEl = document.querySelector('.container');
+        console.log('========== found scrollEl')
+        console.log(scrollEl.getBoundingClientRect().height)
+        console.log(`useLocoScroll start!`)
+        
+        let locoScroll = new LocomotiveScroll({
+          el: scrollEl,
+          smooth: true,
+          multiplier: 1.2,
+        });
+    
+      },[offTask])
 
+    useEffect(() => {
+        if(!offTask) {return}
         let targets = gsap.utils.toArray('.box-trans');
-      //  let y = document.querySelector('#line')
+        //  let y = document.querySelector('#line')
         let u = document.querySelector('#path')
         console.log(targets)
-       // console.log(y.getTotalLength())
+        // console.log(y.getTotalLength())
         let l = targets[3].getTotalLength()
 
-        let localPos = {x : 0,y:0}
-        let po = MotionPathPlugin.convertCoordinates(u,targets[3],localPos)
+        let localPos = { x: 0, y: 0 }
+        let po = MotionPathPlugin.convertCoordinates(u, targets[3], localPos)
         let rawPath = MotionPathPlugin.getRawPath("#path");
         console.log(rawPath)
         gsap.timeline({})
-        .set('#hippo',{
-            scale: .5,
-            strokeDasharray:400,
-            duration:0
-        })
-        .set('.cls-3',{
-          //  scale: .25,
-          strokeDasharray:[1,1000],
-            duration:0
-        })
-        .set('.cls-2',{
-            //  scale: .25,
-            strokeDasharray:[1,1000],
-              duration:0
-          })
-        .to('.cls-3',{
-            //  scale: .25,
+            .set('#hippo', {
+                scale: .5,
+                strokeDasharray: 400,
+                duration: 0
+            })
+            .set('.cls-3', {
+                //  scale: .25,
+                strokeDasharray: [1, 1000],
+                duration: 0
+            })
+            .set('.cls-2', {
+                //  scale: .25,
+                strokeDasharray: [1, 1000],
+                duration: 0
+            })
+            .to('.cls-3', {
+                //  scale: .25,
 
-            strokeDasharray:[1000,1],
-            stagger: 0.05,
-            ease: Power2.easeIn,
-              duration:1
-          })
-          .to('.cls-22' , {
-            strokeDasharray:[1000,1],
-            stagger: 0.05,
-            ease: Power2.easeIn,
-              duration:1
-          })
-      //  .fromTo('.cls-3', {strokeDashoffset:400}, {strokeDashoffset:0,strokeDasharray:5000,duration:7},"<")
-     /*    .to('#path',{
-            scale: .5,
-            x: 200,
-            y: 50,
-           
-            duration:1
-        }) */
-       
-        .set(targets, {strokeDasharray:[40,20,4],duration:2})
-       
-     
-        .to(targets, {
-            attr:{rx:"40"},
-            transformOrigin: "50% 50%",
-            scale:.1,
-            stagger: 0.15,
-            delay: .5,
-            duration:2,
-            ease:Power2.easeIn
-        })
-        .fromTo(targets, {strokeDashoffset:400}, {strokeDashoffset:0,strokeDasharray:[400],duration:3},"<")
-      
-        //path d="m100,100c56 => x=100,y=100 , targets item now is rect , go get pos XY of rect
-        // => arr [ ]
-       
-        .to(targets, {
-            motionPath: {
-                path: "#hippo",
-                align: "#hippo",
-                alignOrigin: [0.5, 0.5],
-                autoRotate: true
-            },
-            fill:'rbg(225,225,225,0)',
-            transformOrigin: "50% 50%",
-            duration: 2,
-            stagger: 0.35,
-            repeat:-1,
-            ease: "power1.inOut"
-        })
-        .to(targets,{
-        
-            attr:{rx:Math.random()*40 + 20},
-            duration:4 
-        },"<")
-       
+                strokeDasharray: [1000, 1],
+                stagger: 0.05,
+                ease: Power2.easeIn,
+                duration: 1
+            })
+            .to('.cls-22', {
+                strokeDasharray: [1000, 1],
+                stagger: 0.05,
+                ease: Power2.easeIn,
+                duration: 1
+            })
+            //  .fromTo('.cls-3', {strokeDashoffset:400}, {strokeDashoffset:0,strokeDasharray:5000,duration:7},"<")
+            /*    .to('#path',{
+                   scale: .5,
+                   x: 200,
+                   y: 50,
+                  
+                   duration:1
+               }) */
 
-    }, [])
+            .set(targets, { strokeDasharray: [40, 20, 4], duration: 2 })
+
+
+            .to(targets, {
+                attr: { rx: "40" },
+                transformOrigin: "50% 50%",
+                scale: .1,
+                stagger: 0.15,
+                delay: .5,
+                duration: 2,
+                ease: Power2.easeIn
+            })
+            .fromTo(targets, { strokeDashoffset: 400 }, { strokeDashoffset: 0, strokeDasharray: [400], duration: 3 }, "<")
+
+            //path d="m100,100c56 => x=100,y=100 , targets item now is rect , go get pos XY of rect
+            // => arr [ ]
+
+            .to(targets, {
+                motionPath: {
+                    path: "#hippo",
+                    align: "#hippo",
+                    alignOrigin: [0.5, 0.5],
+                    autoRotate: true
+                },
+                fill: 'rbg(225,225,225,0)',
+                transformOrigin: "50% 50%",
+                duration: 2,
+                stagger: 0.35,
+                repeat: -1,
+                ease: "power1.inOut"
+            })
+            .to(targets, {
+
+                attr: { rx: Math.random() * 40 + 20 },
+                duration: 4
+            }, "<")
+
+
+    }, [offTask])
 
 
     return (
@@ -238,17 +256,17 @@ export default function Products() {
 </svg>
                 </div>
                 <div>
-                    
+
                     <svg xmlns="http://www.w3.org/2000/svg" id="svg-anime" data-name="Layer 2" viewBox="0 0 600 300">
-                        
+
                         <g id="layerSVG" data-name="Layer 1">
-                        
-                            <rect class="box-trans" x=".12" y=".12" width="80" height="80" />
-                            <rect class="box-trans" x=".12" y="80.17" width="80" height="80" />
-                            <rect class="box-trans" x="80.12" y="80.17" width="80" height="80" />
-                            <rect class="box-trans" x="80.12" y=".12" width="80" height="80" />
-                            <path style={{display:'none'}}id="path" d="m100,100c56.24-59.18,133.7-81.96,198.73-59.49,57.1,19.72,119.08,79.32,106.33,132.91-13.49,56.72-107.89,94.89-175.95,62.03-58.93-28.46-78.23-100.58-68.35-154.43C184.52,52.56,258.45-9.66,308.8,1.89c85.47,19.6,162.45,265.41,55.7,388.61-61.98,71.53-185.58,101.34-225.32,59.49-57.34-60.37,46.9-283.55,118.99-279.75,57.4,3.03,119.96,151.33,78.48,202.53-43.37,53.53-219.49,24.45-296.2-87.34C-12.13,208.82-12.2,101.83,36.65,6.95"/>
-                            <path id="hippo" x='0' y ='0' class="st1" d="M148.802,244.876c2.737-36.735,16.107-69.079,40.099-97.061
+
+                            <rect className="box-trans" x=".12" y=".12" width="80" height="80" />
+                            <rect className="box-trans" x=".12" y="80.17" width="80" height="80" />
+                            <rect className="box-trans" x="80.12" y="80.17" width="80" height="80" />
+                            <rect className="box-trans" x="80.12" y=".12" width="80" height="80" />
+                            <path style={{ display: 'none' }} id="path" d="m100,100c56.24-59.18,133.7-81.96,198.73-59.49,57.1,19.72,119.08,79.32,106.33,132.91-13.49,56.72-107.89,94.89-175.95,62.03-58.93-28.46-78.23-100.58-68.35-154.43C184.52,52.56,258.45-9.66,308.8,1.89c85.47,19.6,162.45,265.41,55.7,388.61-61.98,71.53-185.58,101.34-225.32,59.49-57.34-60.37,46.9-283.55,118.99-279.75,57.4,3.03,119.96,151.33,78.48,202.53-43.37,53.53-219.49,24.45-296.2-87.34C-12.13,208.82-12.2,101.83,36.65,6.95" />
+                            <path id="hippo" x='0' y='0' className="st1" d="M148.802,244.876c2.737-36.735,16.107-69.079,40.099-97.061
   c27.038-31.596,60.924-47.386,101.629-47.386c15.481,0,38.483,2.447,69.024,7.287c30.541,4.886,53.533,7.278,69.033,7.278
   c23.693,0,57.868,8.847,102.526,26.477c7.914,3.009,17.471,11.239,28.701,24.59c6.381,7.886,16.256,19.769,29.616,35.568
   c3.036,2.139,6.998,5.316,11.865,9.595c4.859,4.223,8.194,6.063,9.997,5.456c0.616-1.84,2.149-4.4,4.578-7.735
@@ -279,6 +297,11 @@ export default function Products() {
                 <div className='products_banner' data-scroll-container>
                     <a><img src={images.image1} alt='' /></a>
                     <h2>SẢN XUẤT</h2>
+                    <div className='gr-btn-demo'>
+                        <button value='/' onClick={redirectPage} >GO TO HOME PAGE</button>
+                        <button value='/sampledev' onClick={redirectPage} >Sample Dev</button>
+                    </div>
+                
                 </div>
 
                 <div className='products_banner-sub' data-scroll-container>
@@ -376,7 +399,7 @@ export default function Products() {
                 <div className='gallery-togo' data-scroll-container>
                     <div className='text-svg'>
                         <svg width="1055" height="129" viewBox="0 0 1055 129" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_175_52)">
+                            <g clipPath="url(#clip0_175_52)">
                                 <path d="M54.4526 118.229L13.2956 33.6634C13.0774 33.1477 12.8789 32.6518 12.6606 32.136C12.4423 31.6202 12.2042 31.1243 11.9066 30.6085C9.78322 26.3833 6.01281 24.4591 0.615172 24.836H0.198443L0 21.8604L33.5963 19.6784L33.7948 22.5547L32.2271 22.6539C30.4808 22.7729 29.1314 23.4672 28.159 24.717C27.1866 25.9667 26.7699 27.2759 26.8493 28.6843C26.9088 29.4778 27.0874 30.192 27.3851 30.8863L61.3187 100.197C62.1125 97.8758 62.9261 95.5747 63.7397 93.3331C64.5534 91.0915 65.3471 88.8103 66.1607 86.4695L66.4981 85.6562V85.7951C66.7958 84.8032 67.1926 83.494 67.7483 81.8277C68.2841 80.1812 68.8397 78.4554 69.4351 76.6502C70.2288 74.2301 71.0027 71.9092 71.7767 69.6676C72.5506 67.426 73.0665 65.8986 73.3642 65.1051C74.2374 62.4271 74.8525 59.7293 75.2296 57.0314C75.6066 54.3336 75.7058 51.5961 75.5074 48.7991C75.17 44.0184 73.9992 39.2971 71.9751 34.6751C69.951 30.0531 67.0934 25.8873 63.4421 22.1977L63.3032 22.0786L76.0432 8.86719L76.3409 9.24409C79.1984 12.7156 81.421 16.5639 82.9887 20.7892C84.5564 25.0145 85.4692 29.2596 85.7669 33.5246C85.9852 36.6588 85.8462 39.6344 85.3303 42.4711C84.8342 45.3078 84.1793 48.0651 83.4054 50.7431C82.5521 53.5203 81.5797 56.2578 80.4883 58.9556C79.3969 61.6534 78.3451 64.4901 77.3331 67.4458L64.0573 105.235L70.3876 117.138L54.4526 118.248V118.229Z" fill="white" />
                                 <path d="M95.3516 106.207L95.173 103.331H95.5699C97.9115 103.073 99.7769 102.2 101.126 100.672C102.476 99.1449 103.091 97.3794 102.972 95.3759L100.213 50.0285C100.174 49.5128 99.9555 49.0367 99.5387 48.6201C99.122 48.2035 98.606 48.025 97.9909 48.0647C97.6337 48.0845 97.2368 48.2035 96.7605 48.4019C96.2843 48.6003 95.7088 48.8185 95.0341 49.0367C94.4387 49.3342 93.8633 49.6318 93.3076 49.9293C92.752 50.2269 92.2757 50.4649 91.8392 50.6831L91.3232 50.8418L91.1248 47.4497L91.3827 47.3109C94.6967 45.6247 97.9909 43.8791 101.305 42.0541C104.599 40.229 107.873 38.4437 111.088 36.6782L111.604 36.3807L115.136 94.6618C115.255 96.6653 116.089 98.3514 117.617 99.7004C119.145 101.049 121.129 101.704 123.57 101.625H123.828L124.007 104.481L95.3714 106.227L95.3516 106.207ZM94.7959 23.4668L104.024 13.3301L114.541 22.2766L105.194 32.4133L94.8158 23.4668H94.7959Z" fill="white" />
                                 <path d="M125.991 95.9119L136.945 84.9619L137.223 85.3388C138.275 86.8662 139.565 88.4532 141.093 90.1195C142.621 91.7858 144.347 93.3132 146.252 94.682C148.157 96.0706 150.221 97.2013 152.404 98.094C154.587 98.9866 156.77 99.3635 158.953 99.2445C162.961 99.0263 165.68 97.7567 167.069 95.4556C168.478 93.1545 169.093 90.4765 168.934 87.4216C168.815 85.1602 168.359 83.3154 167.585 81.9268C166.811 80.5184 165.759 79.3678 164.449 78.4355C163.14 77.5032 161.532 76.8089 159.687 76.3328C157.821 75.8567 155.698 75.4401 153.317 75.0434C150.32 74.5871 147.403 74.0317 144.565 73.3572C141.728 72.6828 139.128 71.7306 136.747 70.5007C134.365 69.2708 132.341 67.7037 130.655 65.7795C128.968 63.8553 127.718 61.4749 126.864 58.6382C126.666 58.2216 126.547 57.7455 126.527 57.2099L126.448 55.6428C126.269 52.5085 126.845 49.6917 128.154 47.2319C129.464 44.7523 131.25 42.6297 133.512 40.8444C135.774 39.059 138.453 37.6506 141.549 36.5993C144.645 35.5677 147.879 34.9528 151.293 34.7544C153.555 34.6354 155.896 34.6751 158.317 34.8933C160.738 35.1115 163.12 35.5281 165.461 36.143C167.803 36.758 170.085 37.5316 172.268 38.4639C174.451 39.3963 176.376 40.5071 178.023 41.8164L178.301 42.0544L167.605 52.8656L167.327 52.4887C166.374 51.1398 165.144 49.6718 163.616 48.1047C162.088 46.5376 160.381 45.0895 158.536 43.8001C156.67 42.5107 154.726 41.4196 152.721 40.5667C150.717 39.7137 148.693 39.3368 146.689 39.4558C142.938 39.6542 140.378 40.884 139.009 43.1455C137.64 45.4069 137.044 47.9659 137.203 50.8422C137.322 53.0243 137.838 54.7898 138.731 56.1387C139.644 57.4876 140.835 58.5787 142.323 59.4118C143.811 60.245 145.498 60.8996 147.403 61.3757C149.308 61.8518 151.372 62.2287 153.575 62.5461C154.626 62.7444 155.738 62.9428 156.889 63.0816C158.04 63.2403 159.131 63.4189 160.203 63.6172C162.663 64.014 165.065 64.6289 167.386 65.4621C169.708 66.2952 171.792 67.4061 173.657 68.7947C175.522 70.1833 177.05 71.8694 178.261 73.8531C179.452 75.8368 180.146 78.2371 180.285 81.0143C180.464 84.4064 179.888 87.4613 178.559 90.1592C177.209 92.857 175.324 95.1581 172.903 97.0823C170.462 99.0065 167.605 100.514 164.291 101.605C160.977 102.696 157.444 103.351 153.714 103.549C148.653 103.827 143.772 103.351 139.069 102.121C134.365 100.891 130.139 98.8478 126.408 95.9912L126.011 95.8722L125.991 95.9119Z" fill="white" />
@@ -406,7 +429,7 @@ export default function Products() {
                 </div>
                 <Contact />
             </section>
-            <Grid />
+   
         </section>
 
     )

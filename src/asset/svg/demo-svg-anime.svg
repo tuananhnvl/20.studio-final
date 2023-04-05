@@ -11,10 +11,10 @@
   </defs>
   <g id="Layer_1-2" data-name="Layer 1">
     <g>
-      <rect class="cls-1" x=".5" y=".5" width="20" height="20"/>
-      <rect class="cls-1" x=".5" y="21.46" width="20" height="20"/>
-      <rect class="cls-1" x="21.45" y="21.46" width="20" height="20"/>
-      <rect class="cls-1" x="21.45" y=".5" width="20" height="20"/>
+      <rect className="cls-1" x=".5" y=".5" width="20" height="20"/>
+      <rect className="cls-1" x=".5" y="21.46" width="20" height="20"/>
+      <rect className="cls-1" x="21.45" y="21.46" width="20" height="20"/>
+      <rect className="cls-1" x="21.45" y=".5" width="20" height="20"/>
     </g>
   </g>
 </svg>

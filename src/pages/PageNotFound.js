@@ -31,13 +31,13 @@ export default function PageNotFound() {
    return (
 
          <div className='page404'>
-            <a class="loop-holder top-page">
-               <div class="loop-holder__text">Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;</div>
-               <div class="loop-holder__text">Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;</div>
+            <a className="loop-holder top-page">
+               <div className="loop-holder__text">Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;</div>
+               <div className="loop-holder__text">Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;</div>
             </a>
-            <a class="loop-holder bottom-page">
-               <div class="loop-holder__text">Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;</div>
-               <div class="loop-holder__text">Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;</div>
+            <a className="loop-holder bottom-page">
+               <div className="loop-holder__text">Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;</div>
+               <div className="loop-holder__text">Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;Comming Soon &nbsp; &nbsp; &nbsp;</div>
             </a>
             <div className='title-large'>
                <a className='txt-error' style={{marginRight:'100px'}}>

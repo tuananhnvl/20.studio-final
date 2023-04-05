@@ -154,6 +154,23 @@ section * {
 a {
   text-decoration:none;
 }
+.gr-btn-demo {
+  position: fixed;
+  top:2%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  height:fit-content;
+  z-index: 9999;
+}
+.gr-btn-demo button {
+  display: block;
+  padding:1rem 2rem ;
+  color:white;
+  background-color: transparent;
+}
 .display-grid-helper {
   position:fixed;
    top:0;

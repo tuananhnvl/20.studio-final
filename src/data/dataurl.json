@@ -13,6 +13,10 @@
         "name": "Sample Dev"
       },
       {
+        "patch": "/products",
+        "name": "Products"
+      },
+      {
         "patch": "/patternmaking",
         "name": "Pattern Making"
       },
