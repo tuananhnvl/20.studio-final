@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import usePageTransition from '../hooks/usePageTransition.js'
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 
+
 const images = {
     image1: require('.././asset/sampledev/1.png'),
     image3: require('.././asset/sampledev/2.png'),
@@ -21,6 +22,8 @@ const images = {
 };
 
 export default function SampleDev() {
+
+    
 
     const { redirectPage } = usePageTransition();
     const [offTask,setOffTask] = useState(false)
@@ -38,7 +41,7 @@ export default function SampleDev() {
                         <span>Ý TƯỞNG</span>
                     </div>
                     <div className='dev_product--bannersub' data-scroll-container>
-                        <a className='sub'>Chúng tôi giúp khách hàng biến ý tưởng của họ thành sản phẩm hoàn thiện</a>
+                        
                         <a className='sub-next'>
                             <a>Cách chúng tôi thực hiện</a>
                             <svg data-name="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 143.25 244.55">
@@ -70,11 +73,11 @@ export default function SampleDev() {
                 </div>
                 {/* 4 step */}
                 <div className="wapper-step-dev_product" data-scroll-container>
-                    <div className='step1-dev_products consuctor--gridsys steps-dev_products'>
+                    <div className='step1-dev_products consuctor--gridsys steps-dev_products' data-scroll-section>
                         <div className='img'>
                             <img src={images.image1} alt="" />
                         </div>
-                        <div className='text'>
+                        <div className='text' data-scroll data-scroll-speed="1">
                                 <div className="title">
                                     Nghiên&nbsp;cứu và phát&nbsp;triển
                                 </div>
@@ -87,7 +90,7 @@ export default function SampleDev() {
                         </div>
                     </div>
 
-                    <div className='step2-dev_products consuctor--gridsys steps-dev_products'>
+                    <div className='step2-dev_products consuctor--gridsys steps-dev_products' data-scroll-section>
                         <div className='img'>
                             <img src={images.image4} alt="" />
                         </div>
