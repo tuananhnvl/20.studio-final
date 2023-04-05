@@ -30,17 +30,17 @@ export default function SampleDev() {
 
     return (
         <>
-            <div className='container'>
+         
                 <section data-scroll-section>
 
-                <div className='dev_product--banner' data-scroll-container>
+                <div className='dev_product--banner' >
                     <a value='/' onClick={redirectPage} >GO TO HOME PAGE</a>
                     <a value='/patternmaking' onClick={redirectPage} >patternmaking</a>
                     <div className='text hero-text'>
                         <span>KIẾN TẠO</span>
                         <span>Ý TƯỞNG</span>
                     </div>
-                    <div className='dev_product--bannersub' data-scroll-container>
+                    <div className='dev_product--bannersub' >
                         
                         <a className='sub-next'>
                             <a>Cách chúng tôi thực hiện</a>
@@ -56,7 +56,7 @@ export default function SampleDev() {
                         </a>
                     </div>
                 </div>
-                <div className='dev_product--bannersub' data-scroll-container>
+                <div className='dev_product--bannersub' >
                     <a className='sub'>Chúng tôi giúp khách hàng biến ý tưởng của họ thành sản phẩm hoàn thiện</a>
                     <a className='sub-next'>
                         <a>Cách chúng tôi thực hiện</a>
@@ -72,25 +72,25 @@ export default function SampleDev() {
                     </a>
                 </div>
                 {/* 4 step */}
-                <div className="wapper-step-dev_product" data-scroll-container>
-                    <div className='step1-dev_products consuctor--gridsys steps-dev_products' data-scroll-section>
-                        <div className='img'>
+                <div className="wapper-step-dev_product" >
+                    <section  className='step1-dev_products consuctor--gridsys steps-dev_products' >
+                        <div className='img' data-scroll     data-scroll-direction="horizontal"  data-scroll-speed="-1">
                             <img src={images.image1} alt="" />
                         </div>
-                        <div className='text' data-scroll data-scroll-speed="1">
-                                <div className="title">
+                        <div className='text' >
+                                <div className="title" data-scroll     data-scroll-speed="1">
                                     Nghiên&nbsp;cứu và phát&nbsp;triển
                                 </div>
-                                <div className="des">
+                                <div className="des" data-scroll     data-scroll-direction="horizontal"  data-scroll-speed="2">
                                     Đội ngũ của 20Studio nghiên cứu về vải và phụ kiện, phát triển các quy trình, thêu, in ấn, hoàn thiện và phương pháp giặt độc đáo bằng cả tay nghề và máy móc hiện đại, để tạo ra sản phẩm độc đáo và chất lượng
                                 </div>
                             </div>
                         <div className='img-behind'>
                             <img src={images.image3} alt='' />
                         </div>
-                    </div>
+                    </section>
 
-                    <div className='step2-dev_products consuctor--gridsys steps-dev_products' data-scroll-section>
+                    <div className='step2-dev_products consuctor--gridsys steps-dev_products' >
                         <div className='img'>
                             <img src={images.image4} alt="" />
                         </div>
@@ -160,7 +160,7 @@ export default function SampleDev() {
                     </div>
                     </div>
 
-                    <div className='gallery-togo' data-scroll-container>
+                    <div className='gallery-togo' >
                         <div className='text-svg'>
                             <svg width="1055" height="129" viewBox="0 0 1055 129" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_175_52)">
@@ -194,7 +194,7 @@ export default function SampleDev() {
 
                     <Contact />
                 </section>
-            </div>
+    
 
         </>
 
