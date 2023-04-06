@@ -438,23 +438,24 @@
 
 /*  step 4 */
 .step4-dev_products .img {
-    grid-column-start: 2;
+    grid-column-start: 4;
     grid-column-end: 6;
-    height: 800px;
+    
 }
 .step4-dev_products .text {
     position: absolute;
     
     height: fit-content;
-    top: 635px;
-    right: 100px;
+    top: 60%;
+    left:40%;
 }
 
 .step4-dev_products .img img {
-    width: calc(100% - calc(1440px / 5) / 2);
+    /*width: calc(100% - calc(1440px / 5) / 2);*/
     float:right;
     height: auto;
     display: block;
+
 }
 
 .step4-dev_products .title,.step4-dev_products .des {
@@ -462,12 +463,13 @@
 }
 .step4-dev_products .img-behind {
     position: absolute;
-    width:420px;
-    height:700px;
-    overflow: hidden;
 
-    top:350px;
-    left:-220px;
+
+    width:30%;
+    left:0%;
+    top:-20%;
+
+
 }
 .step4-dev_products .img-behind:before {
     content:"";
@@ -480,6 +482,6 @@
     z-index: 5;
 }
 .step4-dev_products .img-behind img {
-    width:auto;
-    height:100%;
+    width:100%;
+    height:auto;
 }

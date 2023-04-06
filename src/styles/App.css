@@ -519,37 +519,37 @@ border-bottom: 1px solid white;
   z-index: 10;
 }
 .gallery-togo .list-img a:nth-child(1) {
-  width: 247px;
-  top: 30%;
-  left: 0;
+  width: 370px;
+  top: 10%;
+  left: 3%;
 
 }
 .gallery-togo .list-img a:nth-child(2) {
-  width: 188px;
-  top: 79%;
+  width: 310px;
+  top: 59%;
   left: 20%;
 }
 .gallery-togo .list-img a:nth-child(3) {
-  width: 294px;
-  top: 20%;
+  width: 360px;
+  top: -20%;
   left: 42%;
 
 }
 .gallery-togo .list-img a:nth-child(4) {
-  width: 204px;
-  left: 65%;
-  top: 81%;
+  width: 350px;
+  left: 60%;
+  top: 61%;
  
 }
 .gallery-togo .list-img a:nth-child(5) {
-  width: 149px;
-  top: 22%;
-  left: 82%;
+  width: 290px;
+  top: 2%;
+  left: 72%;
 }
 .gallery-togo .list-img a:nth-child(6) {
   width: 253px;
-  top: 81%;
-  left: 97%;
+  top: 41%;
+  left: 87%;
 }
 
 

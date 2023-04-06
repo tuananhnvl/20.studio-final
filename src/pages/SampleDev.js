@@ -19,6 +19,12 @@ const images = {
     image7: require('.././asset/sampledev/7.png'),
     image11: require('.././asset/sampledev/11.png'),
     image12: require('.././asset/sampledev/12.png'),
+    image21: require('.././asset/sampledev/21.png'),
+    image22: require('.././asset/sampledev/22.png'),
+    image23: require('.././asset/sampledev/23.png'),
+    image24: require('.././asset/sampledev/24.png'),
+    image25: require('.././asset/sampledev/25.png'),
+    image26: require('.././asset/sampledev/26.png'),
 };
 
 export default function SampleDev() {
@@ -91,7 +97,7 @@ export default function SampleDev() {
                                     Đội ngũ của 20Studio nghiên cứu về vải và phụ kiện, phát triển các quy trình, thêu, in ấn, hoàn thiện và phương pháp giặt độc đáo bằng cả tay nghề và máy móc hiện đại, để tạo ra sản phẩm độc đáo và chất lượng
                                 </div>
                             </div>
-                        <div className='img-behind' data-scroll  data-scroll-delay="0.05" data-scroll-repeat>
+                        <div className='img-behind' data-scroll  data-scroll-delay="0.05" >
                             <img src={images.image3} alt='' />
                         </div>
                     </section>
@@ -152,20 +158,17 @@ export default function SampleDev() {
                         </div>
                         <div className='text'>
                             <div className="title">
-                                May đo chi tiết
+                                Tinh chỉnh chi tiết
                             </div>
                             <div className="des">
-                                Sau giai đoạn mô hình và cắt, các thợ may của chúng tôi sẽ tạo ra mẫu nguyên mẫu đầu tiên, được điều chỉnh và hoàn thiện trước khi được khách hàng chấp nhận.
-
+                                Sau giai đoạn mô hình và cắt, các thợ may của chúng tôi sẽ tạo ra mẫu nguyên mẫu đầu tiên, được điều chỉnh và hoàn thiện các chi tiết trang trí, tất cả được là thủ công tỷ mỉ để đạt được tiêu chuẩn chất lượng của 20Studio và khách hàng đề ra.
                             </div>
                         </div>
-
-                     
-
-
+                        <div className='img-behind'>
+                                <img src={images.image3} alt="" />
+                        </div>
                     </div>
                     </div>
-
                     <div className='gallery-togo' >
                         <div className='text-svg'>
                             <svg width="1055" height="129" viewBox="0 0 1055 129" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -189,12 +192,12 @@ export default function SampleDev() {
                             </svg>
                         </div>
                         <div className='list-img'>
-                            <a><img src={images.image7} alt='' /></a>
-                            <a><img src={images.image7} alt='' /></a>
-                            <a><img src={images.image7} alt='' /></a>
-                            <a><img src={images.image7} alt='' /></a>
-                            <a><img src={images.image7} alt='' /></a>
-                            <a><img src={images.image7} alt='' /></a>
+                            <a data-scroll  data-scroll-delay="0.05" data-scroll-speed="1"><img src={images.image21} alt='' /></a>
+                            <a data-scroll  data-scroll-delay="0.5" data-scroll-speed="1.5"><img src={images.image22} alt='' /></a>
+                            <a data-scroll  data-scroll-delay="0.05" data-scroll-speed="-2.2"><img src={images.image23} alt='' /></a>
+                            <a data-scroll  data-scroll-delay="0.05" data-scroll-speed="2"><img src={images.image24} alt='' /></a>
+                            <a data-scroll  data-scroll-delay="0.05" data-scroll-speed="2"><img src={images.image25} alt='' /></a>
+                            <a data-scroll  data-scroll-delay="0.05" data-scroll-speed="3"><img src={images.image26} alt='' /></a>
                         </div>
                     </div>
 
