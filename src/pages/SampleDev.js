@@ -80,18 +80,18 @@ export default function SampleDev() {
                 {/* 4 step */}
                 <div className="wapper-step-dev_product" >
                     <section  className='step1-dev_products consuctor--gridsys steps-dev_products' >
-                        <div className='img' data-scroll     data-scroll-direction="horizontal"  data-scroll-speed="-1">
+                        <div className='img' data-scroll  data-scroll-speed="-0.5">
                             <img src={images.image1} alt="" />
                         </div>
-                        <div className='text' >
-                                <div className="title" data-scroll     data-scroll-speed="1">
+                        <div className='text' data-scroll  data-scroll-speed="0.5">
+                                <div className="title" >
                                     Nghiên&nbsp;cứu và phát&nbsp;triển
                                 </div>
-                                <div className="des" data-scroll     data-scroll-direction="horizontal"  data-scroll-speed="2">
+                                <div className="des">
                                     Đội ngũ của 20Studio nghiên cứu về vải và phụ kiện, phát triển các quy trình, thêu, in ấn, hoàn thiện và phương pháp giặt độc đáo bằng cả tay nghề và máy móc hiện đại, để tạo ra sản phẩm độc đáo và chất lượng
                                 </div>
                             </div>
-                        <div className='img-behind'>
+                        <div className='img-behind' data-scroll  data-scroll-delay="0.05" data-scroll-repeat>
                             <img src={images.image3} alt='' />
                         </div>
                     </section>
@@ -100,14 +100,14 @@ export default function SampleDev() {
                         <div className='img'>
                             <img src={images.image4} alt="" />
                         </div>
-                        <div className='text'>
-                            <div className="title">
+                        <div className='text' data-scroll  data-scroll-speed="0.8">
+                            <div className="title"  >
                                 Kỹ&nbsp;thuật tinh&nbsp;xảo
                             </div>
-                            <div className="des">
+                            <div className="des"  >
                                 Chúng tôi tại 20studio sẵn sàng tạo ra các quy trình độc đáo giúp khách hàng thúc đẩy sự sáng tạo và khám phá những điều mới lạ.
                             </div>
-                            <div className='detail'>
+                            <div className='detail' >
                                 <ul>
                                 <li><a>Double-face</a></li>
                                 <li><a>Digital print</a></li>
@@ -121,10 +121,10 @@ export default function SampleDev() {
                                 </ul>
                             </div>
                         </div>
-                        <div className='img-behind s2-img1'>
+                        <div className='img-behind s2-img1' data-scroll  data-scroll-speed="-.2">
                             <img src={images.image11} alt='' />
                         </div>
-                        <div className='img-behind s2-img2'>
+                        <div className='img-behind s2-img2'data-scroll  data-scroll-speed="1">
                             <img src={images.image12} alt='' />
                         </div>
                     </div>
@@ -141,7 +141,7 @@ export default function SampleDev() {
                                 Chuyên viên thiết kế mẫu của chúng tôi sẽ tạo ra các mẫu đẹp cho các loại sản phẩm chính như: áo khoác, váy, áo sơ mi, váy chân váy, quần
                             </div>
                         </div>
-                        <div className='img-behind'>
+                        <div className='img-behind' data-scroll  data-scroll-speed="3">
                             <img src={images.image6} alt='' />
                         </div>
                     </div>

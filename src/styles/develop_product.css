@@ -229,7 +229,7 @@
 
 .step1-dev_products .text {
 
-    top:25%;
+    top:45%;
     right:0;
 
     width:40%;
@@ -251,7 +251,7 @@
 
 .step1-dev_products .img-behind {
     position: absolute;
-    bottom: -55%;
+    bottom: -65%;
     right: 0px;
 
     width: 30%;
@@ -415,7 +415,7 @@
     position: absolute;
     width:30%;
     right:20%;
-    top:50%;
+    top:40%;
     
     
     z-index:10;
