@@ -91,10 +91,10 @@ export default function SampleDev() {
                         </div>
                         <div className='text' data-scroll  data-scroll-speed="0.5">
                                 <div className="title" >
-                                    Nghiên&nbsp;cứu và phát&nbsp;triển
+                                    Nghiên&nbsp;cứu và tư vấn&nbsp;thiết kế
                                 </div>
                                 <div className="des">
-                                    Đội ngũ của 20Studio nghiên cứu về vải và phụ kiện, phát triển các quy trình, thêu, in ấn, hoàn thiện và phương pháp giặt độc đáo bằng cả tay nghề và máy móc hiện đại, để tạo ra sản phẩm độc đáo và chất lượng
+                                    Là một quy trình độc nhất luôn được cải tiến qua nhiều năm hoạt động nhằm cung cấp cho khách hàng sự hỗ trợ, đề xuất, ý tưởng, giải pháp và các kỹ thuật độc nhất phù hợp với tầm nhìn của họ.
                                 </div>
                             </div>
                         <div className='img-behind' data-scroll  data-scroll-delay="0.05" >
@@ -108,7 +108,7 @@ export default function SampleDev() {
                         </div>
                         <div className='text' data-scroll  data-scroll-speed="0.8">
                             <div className="title"  >
-                                Kỹ&nbsp;thuật tinh&nbsp;xảo
+                                Ứng&nbsp;dụng kỹ&nbsp;thuật
                             </div>
                             <div className="des"  >
                                 Chúng tôi tại 20studio sẵn sàng tạo ra các quy trình độc đáo giúp khách hàng thúc đẩy sự sáng tạo và khám phá những điều mới lạ.
@@ -144,7 +144,7 @@ export default function SampleDev() {
                                 dựng rập
                             </div>
                             <div className="des">
-                                Chuyên viên thiết kế mẫu của chúng tôi sẽ tạo ra các mẫu đẹp cho các loại sản phẩm chính như: áo khoác, váy, áo sơ mi, váy chân váy, quần
+                                Dựng rập chính là trái tim của toàn bộ quy trình sản xuất, để sản phẩm đạt được sự hoàn thiện tốt nhất, chúng tôi luôn cố gắng làm ra những bộ rập hoàn chỉnh nhất có thể với tay nghề và ứng dụng kỹ thuật hiện đại bổ trợ.
                             </div>
                         </div>
                         <div className='img-behind' data-scroll  data-scroll-speed="3">
@@ -158,7 +158,7 @@ export default function SampleDev() {
                         </div>
                         <div className='text'>
                             <div className="title">
-                                Tinh chỉnh chi tiết
+                                May nguyên mẫu
                             </div>
                             <div className="des">
                                 Sau giai đoạn mô hình và cắt, các thợ may của chúng tôi sẽ tạo ra mẫu nguyên mẫu đầu tiên, được điều chỉnh và hoàn thiện các chi tiết trang trí, tất cả được là thủ công tỷ mỉ để đạt được tiêu chuẩn chất lượng của 20Studio và khách hàng đề ra.
