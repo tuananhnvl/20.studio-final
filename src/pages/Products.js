@@ -17,6 +17,8 @@ const images = {
     image4: require('.././asset/products/4.png'),
     image5: require('.././asset/products/5.png'),
     image6: require('.././asset/products/6.png'),
+    image31: require('.././asset/products/31.png'),
+    image32: require('.././asset/products/32.JPG'),
 
 };
 
@@ -335,6 +337,9 @@ export default function Products() {
                                 Đảm bảo trang phục hoàn toàn vừa vặn với cơ thể và có thể mặc được đối với những đối tượng mục tiêu. Thiết kế sẽ được định cỡ với sự trợ giúp của nhân viên xếp nếp có kinh nghiệm và phần mềm thời trang tiên tiến
                             </div>
                         </div>
+                        <div className='img-behind'>
+                                <img src={images.image31} alt="" />
+                        </div>
                     </div>
 
                     <div className='step3-products consuctor--gridsys'>
@@ -363,6 +368,9 @@ export default function Products() {
                             <div className="des">
                                 We only delivery an impeccable quality product that fully reflect the prestige and quality of our customer
                             </div>
+                        </div>
+                        <div className='img-behind'>
+                                <img src={images.image32} alt="" />
                         </div>
                     </div>
 
